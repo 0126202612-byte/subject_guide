@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3학년 선택과목 가이드 & 수요조사</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f0f2f7;--card:#fff;--border:#e2e6ef;--text:#1a1d2e;--muted:#8a90a8;--radius:16px;--shadow:0 2px 16px rgba(30,40,80,.08);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Pretendard','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+/* ─ HEADER ─ */
+.header{background:linear-gradient(135deg,#0d1f4a 0%,#1a3a7e 55%,#0f3460 100%);padding:28px 24px 0;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;background:rgba(255,255,255,.04);border-radius:50%;}
+.header-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.header-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 12px;margin-bottom:12px;font-size:11px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:1.5px;text-transform:uppercase;}
+.header h1{font-size:26px;font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:6px;}
+.header p{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:20px;}
+.nav-tabs{display:flex;gap:2px;flex-wrap:wrap;}
+.nav-tab{padding:11px 20px;border:none;cursor:pointer;border-radius:12px 12px 0 0;font-size:13px;font-weight:700;font-family:inherit;transition:all .2s;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);}
+.nav-tab.active{background:#f0f2f7;color:#1a3a7e;}
+.nav-tab:hover:not(.active){color:rgba(255,255,255,.8);background:rgba(255,255,255,.12);}
+/* ─ MAIN ─ */
+.main{max-width:1100px;margin:0 auto;padding:24px 16px 60px;}
+.tab-panel{display:none;}.tab-panel.active{display:block;}
+/* ─ COMMON COMPONENTS ─ */
+.notice-card{background:linear-gradient(135deg,#fff8e7,#fffbf0);border:1px solid #ffd85e;border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;}
+.notice-icon{font-size:18px;margin-top:2px;flex-shrink:0;}
+.notice-text{font-size:13px;line-height:1.6;color:#6b4c00;}
+.notice-text strong{font-weight:700;}
+.section-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px;box-shadow:var(--shadow);margin-bottom:20px;}
+.step-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+/* ─ GUIDE TAB ─ */
+.gyeyol-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:4px;}
+.gyeyol-btn{padding:10px 18px;border-radius:12px;border:2px solid var(--border);background:white;color:#444;cursor:pointer;font-weight:700;font-size:14px;font-family:inherit;box-shadow:0 1px 4px rgba(0,0,0,.05);transition:all .18s;display:flex;align-items:center;gap:6px;}
+.gyeyol-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.1);}
+.major-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.major-btn{padding:7px 14px;border-radius:10px;border:2px solid var(--border);background:white;color:#555;cursor:pointer;font-weight:600;font-size:13px;font-family:inherit;transition:all .15s;}
+.major-btn:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(0,0,0,.08);}
+.result-section{display:none;}
+.key-card{border-radius:var(--radius);border:1px solid #e0e7ff;padding:18px 20px;margin-bottom:16px;}
+.key-card-title{font-size:13px;font-weight:800;margin-bottom:12px;}
+.key-card-title span{font-size:11px;font-weight:500;margin-left:6px;color:#888;}
+.key-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.key-tag{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;border:1px solid;font-weight:700;font-size:13px;}
+.key-tag .cnt{font-size:11px;font-weight:800;color:white;padding:2px 7px;border-radius:10px;margin-left:2px;}
+.group-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
+.group-card{background:var(--card);border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.05);}
+.group-header{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid;}
+.group-bar{width:4px;height:20px;border-radius:2px;flex-shrink:0;}
+.group-header-title{font-size:13px;font-weight:800;}
+.group-body{padding:12px 14px;display:flex;flex-direction:column;gap:8px;}
+.subject-row{display:flex;flex-direction:column;gap:4px;}
+.subject-row-top{display:flex;align-items:center;justify-content:space-between;}
+.subject-name{font-size:14px;font-weight:700;}
+.univ-count{font-size:11px;font-weight:800;color:white;padding:2px 8px;border-radius:10px;}
+.univ-list{font-size:11px;color:#888;line-height:1.5;}
+/* ─ SURVEY TAB ─ */
+.survey-layout{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;}
+@media(max-width:820px){.survey-layout{grid-template-columns:1fr;}}
+.student-form-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px;box-shadow:var(--shadow);margin-bottom:16px;}
+.form-title{font-size:15px;font-weight:800;margin-bottom:14px;color:#1a3a7e;}
+.form-row{margin-bottom:12px;}
+.form-label{font-size:12px;font-weight:700;color:#555;margin-bottom:5px;display:block;}
+.form-input, .form-select{width:100%;padding:9px 12px;border:2px solid var(--border);border-radius:10px;font-family:inherit;font-size:13px;transition:border .15s;outline:none;background:white;}
+.form-input:focus, .form-select:focus{border-color:#1a3a7e;}
+.sem-section{margin-bottom:16px;}
+.sem-title{font-size:13px;font-weight:800;color:#1a3a7e;padding:9px 14px;background:#f0f4ff;border-radius:10px;margin-bottom:10px;}
+.select-grid{display:flex;flex-direction:column;gap:5px;}
+.select-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border:2px solid var(--border);border-radius:10px;background:white;cursor:pointer;transition:all .15s;}
+.select-item:hover{border-color:#1a3a7e;background:#f8f9ff;}
+.select-item.selected{border-color:#1a3a7e;background:#f0f4ff;}
+.select-item input[type=checkbox]{width:15px;height:15px;accent-color:#1a3a7e;cursor:pointer;flex-shrink:0;}
+.select-item-name{font-size:13px;font-weight:700;flex:1;}
+.select-item-tag{font-size:10px;font-weight:700;padding:2px 6px;border-radius:6px;}
+.select-item-credits{font-size:11px;font-weight:700;color:#1a3a7e;}
+.sem-tabs{display:flex;gap:8px;margin-bottom:16px;}
+.sem-tab{flex:1;padding:10px;border:2px solid var(--border);border-radius:10px;background:white;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;text-align:center;color:#555;}
+.sem-tab.active{background:#1a3a7e;color:white;border-color:#1a3a7e;}
+.submit-btn{width:100%;padding:13px;background:linear-gradient(135deg,#1a3a7e,#2557cc);color:white;border:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;transition:all .18s;box-shadow:0 4px 12px rgba(26,58,126,.3);margin-top:8px;}
+.submit-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(26,58,126,.4);}
+/* Stats */
+.stats-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:18px;box-shadow:var(--shadow);position:sticky;top:20px;}
+.stats-title{font-size:14px;font-weight:800;margin-bottom:12px;color:#1a3a7e;}
+.stats-total{background:linear-gradient(135deg,#1a3a7e,#2557cc);border-radius:12px;padding:12px;margin-bottom:14px;text-align:center;color:white;}
+.stats-total-num{font-size:28px;font-weight:900;display:block;}
+.stats-total-label{font-size:11px;opacity:.8;}
+.stats-sem{margin-bottom:12px;}
+.stats-sem-title{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:7px;letter-spacing:1px;}
+.stats-row{display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+.stats-name{font-size:12px;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stats-bar-wrap{flex:2;height:5px;background:#f0f2f7;border-radius:3px;overflow:hidden;}
+.stats-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,#1a3a7e,#4a90e2);transition:width .4s;}
+.stats-count{font-size:11px;font-weight:700;color:#1a3a7e;white-space:nowrap;}
+.saved-list{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);}
+.saved-title{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:7px;letter-spacing:1px;}
+.saved-entry{display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:5px 9px;border-radius:8px;background:#f8f9ff;margin-bottom:3px;}
+.saved-entry-name{font-weight:700;color:#1a3a7e;}
+.saved-del{background:none;border:none;cursor:pointer;color:#ccc;font-size:13px;padding:2px 4px;transition:color .15s;}
+.saved-del:hover{color:#e74c3c;}
+/* ─ CONSULT TAB ─ */
+.consult-layout{display:grid;grid-template-columns:320px 1fr;gap:20px;align-items:start;}
+@media(max-width:820px){.consult-layout{grid-template-columns:1fr;}}
+.config-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px;box-shadow:var(--shadow);position:sticky;top:20px;}
+.config-title{font-size:15px;font-weight:800;margin-bottom:14px;color:#1a3a7e;display:flex;align-items:center;gap:8px;}
+.config-section{margin-bottom:16px;}
+.config-section-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.url-input-wrap{display:flex;gap:6px;}
+.url-input{flex:1;padding:8px 10px;border:2px solid var(--border);border-radius:8px;font-family:inherit;font-size:12px;outline:none;}
+.url-input:focus{border-color:#1a3a7e;}
+.url-btn{padding:8px 12px;background:#1a3a7e;color:white;border:none;border-radius:8px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;}
+.url-btn:hover{background:#2557cc;}
+.student-list-wrap{max-height:420px;overflow-y:auto;}
+.student-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;border:2px solid var(--border);background:white;cursor:pointer;transition:all .15s;margin-bottom:5px;}
+.student-item:hover{border-color:#1a3a7e;background:#f8f9ff;}
+.student-item.active{border-color:#1a3a7e;background:#f0f4ff;}
+.student-num{font-size:11px;font-weight:700;color:white;background:#1a3a7e;padding:2px 7px;border-radius:8px;min-width:28px;text-align:center;}
+.student-name{font-size:13px;font-weight:800;flex:1;}
+.student-gyeyol{font-size:10px;font-weight:700;padding:2px 7px;border-radius:7px;color:white;}
+.consult-panel{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:24px;box-shadow:var(--shadow);min-height:400px;}
+.consult-empty{text-align:center;padding:60px 20px;color:var(--muted);}
+.consult-empty-icon{font-size:48px;margin-bottom:12px;}
+.consult-empty-text{font-size:14px;}
+.consult-header{margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid var(--border);}
+.consult-student-name{font-size:22px;font-weight:900;margin-bottom:6px;}
+.consult-meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.consult-badge{font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;border:2px solid;}
+.consult-section-title{font-size:13px;font-weight:800;color:#1a3a7e;margin:16px 0 10px;padding-left:10px;border-left:3px solid #1a3a7e;}
+.recommend-block{background:#f8f9ff;border-radius:12px;padding:16px;margin-bottom:12px;}
+.rec-major-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.rec-major-name{font-size:14px;font-weight:800;}
+.rec-key-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:#fff3e0;color:#e65100;border:1px solid #ffe0b2;}
+.rec-subj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;}
+.rec-subj-item{padding:6px 10px;border-radius:8px;border:1px solid;font-size:12px;font-weight:600;}
+.rec-subj-count{font-size:10px;font-weight:800;color:white;padding:1px 5px;border-radius:6px;margin-left:4px;}
+.loading-spinner{text-align:center;padding:40px;color:var(--muted);font-size:13px;}
+/* modal & toast */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(20,30,70,.55);z-index:1000;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:white;border-radius:20px;max-width:520px;width:100%;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.25);animation:slideUp .25s ease;max-height:80vh;overflow-y:auto;}
+@keyframes slideUp{from{transform:translateY(20px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.modal-title{font-size:18px;font-weight:900;margin-bottom:6px;color:#1a3a7e;}
+.modal-sub{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.modal-close{width:100%;padding:12px;background:linear-gradient(135deg,#1a3a7e,#2557cc);color:white;border:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;margin-top:14px;}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1a3a7e;color:white;padding:12px 24px;border-radius:30px;font-size:13px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2000;white-space:nowrap;}
+.toast.show{opacity:1;}
+@media(max-width:600px){.header h1{font-size:20px;}.group-cards{grid-template-columns:1fr;}.rec-subj-grid{grid-template-columns:1fr 1fr;}}
+
+/* ─ UNIFIED CONSULT TAB ─ */
+.consult-layout{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start;}
+@media(max-width:900px){.consult-layout{grid-template-columns:1fr;}}
+.consult-left-panel .config-card{position:sticky;top:20px;}
+.class-btn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.class-btn{padding:10px 6px;border:2px solid var(--border);border-radius:10px;background:white;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;transition:all .15s;text-align:center;color:#555;}
+.class-btn:hover{border-color:#1a3a7e;color:#1a3a7e;}
+.class-btn.active{background:#1a3a7e;color:white;border-color:#1a3a7e;}
+.student-list-wrap{max-height:460px;overflow-y:auto;}
+.student-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;border:2px solid var(--border);background:white;cursor:pointer;transition:all .15s;margin-bottom:4px;position:relative;}
+.student-item:hover{border-color:#1a3a7e;background:#f8f9ff;}
+.student-item.active{border-color:#1a3a7e;background:#f0f4ff;}
+.student-item.done{border-color:#27ae60;background:#f0fff4;}
+.student-item.done::after{content:'✓';position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:800;color:#27ae60;}
+.student-num{font-size:11px;font-weight:700;color:white;background:#1a3a7e;padding:2px 7px;border-radius:8px;min-width:26px;text-align:center;}
+.student-name{font-size:13px;font-weight:800;flex:1;}
+/* Consult panel internals */
+.consult-panel{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:22px;box-shadow:var(--shadow);min-height:400px;}
+.consult-header{margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;}
+.consult-student-name{font-size:22px;font-weight:900;margin-bottom:6px;}
+.consult-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.consult-badge{font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;border:2px solid;}
+.save-btn{padding:9px 18px;background:linear-gradient(135deg,#27ae60,#2ecc71);color:white;border:none;border-radius:10px;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;box-shadow:0 3px 10px rgba(39,174,96,.3);transition:all .15s;white-space:nowrap;}
+.save-btn:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(39,174,96,.4);}
+.consult-section-title{font-size:13px;font-weight:800;color:#1a3a7e;margin:16px 0 10px;padding-left:10px;border-left:3px solid #1a3a7e;}
+/* 2학년 수강이력 */
+.history-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px;}
+@media(max-width:600px){.history-grid{grid-template-columns:1fr;}}
+.history-sem-card{background:#f8f9ff;border-radius:12px;padding:12px 14px;}
+.history-sem-title{font-size:11px;font-weight:800;color:#1a3a7e;margin-bottom:8px;letter-spacing:.5px;}
+.history-tag{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:14px;border:1px solid;font-size:12px;font-weight:700;margin:2px 3px;}
+/* 3학년 선택 입력 */
+.grade3-input-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:700px){.grade3-input-grid{grid-template-columns:1fr;}}
+.grade3-sem-block{background:#f8f9ff;border-radius:12px;padding:14px;}
+.grade3-sem-title{font-size:12px;font-weight:800;color:#1a3a7e;margin-bottom:10px;}
+.grade3-subj-list{display:flex;flex-direction:column;gap:5px;}
+.grade3-subj-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border:2px solid var(--border);border-radius:9px;background:white;cursor:pointer;transition:all .13s;}
+.grade3-subj-item:hover{border-color:#1a3a7e;background:#f0f4ff;}
+.grade3-subj-item.selected{border-color:#1a3a7e;background:#e8f0ff;}
+.grade3-subj-item.recommended{border-color:#e8b800;background:#fffbf0;}
+.grade3-subj-item.selected.recommended{border-color:#27ae60;background:#f0fff4;}
+.grade3-subj-item input[type=checkbox]{flex-shrink:0;accent-color:#1a3a7e;width:14px;height:14px;}
+.grade3-subj-name{font-size:12px;font-weight:700;flex:1;}
+.rec-star{font-size:10px;color:#e8b800;font-weight:800;}
+.rec-count-badge{font-size:10px;font-weight:800;color:white;padding:1px 5px;border-radius:5px;background:#1a3a7e;}
+/* 진로 입력 폼 */
+.consult-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+@media(max-width:600px){.consult-form-grid{grid-template-columns:1fr;}}
+.form-label{font-size:12px;font-weight:700;color:#555;margin-bottom:4px;display:block;}
+.form-input,.form-select{width:100%;padding:8px 11px;border:2px solid var(--border);border-radius:9px;font-family:inherit;font-size:13px;outline:none;background:white;transition:border .15s;}
+.form-input:focus,.form-select:focus{border-color:#1a3a7e;}
+.key-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.key-tag{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;border:1px solid;font-weight:700;font-size:13px;}
+.key-tag .cnt{font-size:11px;font-weight:800;color:white;padding:2px 7px;border-radius:10px;margin-left:2px;}
+.key-card{border-radius:var(--radius);border:1px solid #e0e7ff;padding:14px 16px;margin-bottom:12px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">🏫 3학년 선택과목 안내</div>
+    <h1>2026 · 3학년 선택과목 가이드</h1>
+    <p>희망 학과에 맞는 과목 확인 · 수요조사 참여 · 진로 맞춤 상담 보조</p>
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="switchTab('guide')">📚 학과별 권장과목</button>
+      <button class="nav-tab" onclick="switchTab('consult')">🧑‍🏫 진로상담 & 수요조사</button>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ══ TAB 1: 학과별 권장과목 ══ -->
+<div class="tab-panel active" id="tab-guide">
+  <div class="notice-card">
+    <div class="notice-icon">📢</div>
+    <div class="notice-text">
+      <strong>수강신청 기간: 2026-05-21 ~ 2026-05-25 23:55</strong>&nbsp;
+      지금은 <strong>가수요조사</strong> 기간입니다. 확정적인 선택이 아니며, 본격적인 수요조사는 2학기에 진행됩니다.
+    </div>
+  </div>
+  <div class="section-card">
+    <div class="step-label">Step 1 — 계열 선택</div>
+    <div class="gyeyol-grid" id="gyeyol-grid"></div>
+  </div>
+  <div class="section-card" id="major-section" style="display:none;">
+    <div class="step-label">Step 2 — 학과 선택</div>
+    <div class="major-grid" id="major-grid"></div>
+  </div>
+  <div class="result-section" id="result-section">
+    <div id="key-card"></div>
+    <div class="group-cards" id="group-cards"></div>
+  </div>
+</div>
+
+<!-- ══ TAB 2: 통합 진로상담 & 수요조사 ══ -->
+<div class="tab-panel" id="tab-consult">
+  <div class="notice-card">
+    <div class="notice-icon">🧑‍🏫</div>
+    <div class="notice-text">
+      반을 선택하고 학생을 클릭하면 <strong>2학년 수강이력</strong>과 함께 <strong>3학년 선택과목 입력 및 진로 추천</strong>을 한 화면에서 진행할 수 있습니다.
+      💾 저장 시 구글 시트에 기록되어 <strong>담임 선생님 전원이 실시간 공유</strong>됩니다. 반별 시트(1반~8반)가 자동으로 분리됩니다.
+    </div>
+  </div>
+  <div class="consult-layout">
+    <!-- 왼쪽: 반 선택 + 학생 목록 -->
+    <div class="consult-left-panel">
+      <div class="config-card">
+        <div class="config-title">🏫 반 선택</div>
+        <div id="sheet-status-bar" style="display:flex;align-items:center;gap:6px;margin-bottom:12px;padding:7px 10px;border-radius:8px;background:#f0f4ff;font-size:11px;font-weight:700;color:#1a3a7e;">
+          <span id="sheet-status-dot" style="width:8px;height:8px;border-radius:50%;background:#ccc;flex-shrink:0;"></span>
+          <span id="sheet-status">시트 연결 중...</span>
+        </div>
+        <div class="class-btn-grid" id="class-btn-grid"></div>
+        <div style="margin-top:14px;">
+          <div class="config-section-label">학생 목록 <span id="student-count"></span></div>
+          <div class="student-list-wrap" id="student-list">
+            <div style="font-size:12px;color:var(--muted);text-align:center;padding:20px">위에서 반을 선택해주세요</div>
+          </div>
+        </div>
+        <button onclick="exportStudentList()" style="margin-top:12px;width:100%;padding:7px;border:2px dashed var(--border);border-radius:8px;background:white;font-family:inherit;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;">📋 Apps Script용 학생목록 복사</button>
+      </div>
+    </div>
+    <!-- 오른쪽: 상담 패널 -->
+    <div>
+      <div class="consult-panel" id="consult-panel">
+        <div class="consult-empty">
+          <div class="consult-empty-icon">👈</div>
+          <div class="consult-empty-text">왼쪽에서 반과 학생을 선택하면<br>상담 화면이 표시됩니다</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-sub" id="modal-sub"></div>
+    <div id="modal-body"></div>
+    <button class="modal-close" onclick="document.getElementById('modal-overlay').classList.remove('open')">닫기</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ══════════════════════════════════════════
+   데이터: 2028 입시 권장과목 (165개 학과)
+   원본 대학교 이름 기반 + 전남 네비게이션 보강
+══════════════════════════════════════════ */
+const DATA = {"인문":{"국어국문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"윤리와사상"},{"u":"고전과윤리"},{"u":"철학"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}]},"국제지역학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"}],"지리":[{"u":"세계지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}],"윤리":[{"u":"철학"}]},"독일어문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"윤리와사상"},{"u":"고전과윤리"},{"u":"철학"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}]},"러시아어문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"윤리와사상"},{"u":"고전과윤리"},{"u":"철학"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}]},"문예창작과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"역사":[{"u":"세계사"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}],"윤리":[{"u":"철학"}]},"문헌정보학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"}],"지리":[{"u":"세계지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}],"윤리":[{"u":"철학"}]},"문화민속미술사학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"},{"u":"영미문학읽기"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"지리":[{"u":"한국지리"}],"기타":[{"u":"과학사"},{"u":"논술"}],"윤리":[{"u":"철학"}]},"스페인어문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"},{"u":"영어권문화"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"윤리와사상"},{"u":"고전과윤리"},{"u":"철학"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}]},"심리학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"철학"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"아시아어문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"},{"u":"영미문학읽기"}],"지리":[{"u":"세계지리"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"윤리":[{"u":"고전과윤리"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}]},"언어학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"},{"u":"영미문학읽기"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"고전과윤리"},{"u":"철학"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}]},"역사고고학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"},{"u":"영어권문화"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"일반사회":[{"u":"사회문제탐구"}],"윤리":[{"u":"고전과윤리"},{"u":"철학"}],"기타":[{"u":"과학사"},{"u":"논술"}]},"영미어문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"실용영어"},{"u":"영어권문화"},{"u":"진로영어"},{"u":"영미문학읽기"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"윤리와사상"},{"u":"고전과윤리"},{"u":"철학"}],"기타":[{"u":"심리학"},{"u":"논술"}]},"일본어문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"}],"지리":[{"u":"세계지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"윤리":[{"u":"철학"}],"기타":[{"u":"심리학"},{"u":"논술"}]},"종교학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"},{"u":"영어권문화"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"논술"}],"윤리":[{"u":"철학"}]},"중국어문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"}],"지리":[{"u":"세계지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"윤리":[{"u":"철학"}],"기타":[{"u":"심리학"},{"u":"논술"}]},"철학윤리학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"일반사회":[{"u":"정치와법"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}],"윤리":[{"u":"철학"}]},"프랑스어문학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영미문학읽기"},{"u":"영어권문화"}],"지리":[{"u":"세계지리"}],"역사":[{"u":"세계사"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"심리학"},{"u":"논술"}],"윤리":[{"u":"철학"}]},"영어영문":{"국어":[{"u":"광운대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"덕성여대"},{"u":"동국대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전북대"}],"확률과통계":[{"u":"광운대"},{"u":"영남대"}],"미적분Ⅰ":[{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"서울시립대"}],"영어":[{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"덕성여대"},{"u":"동국대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전남대"},{"u":"전북대"},{"u":"조선대"},{"u":"충북대"}],"일반사회":[{"u":"광운대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"덕성여대"},{"u":"동국대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전남대"},{"u":"충북대"}],"역사":[{"u":"동국대"}],"지리":[{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전남대"},{"u":"충북대"}],"윤리":[{"u":"광운대"},{"u":"동국대"}],"대수":[{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"서울시립대"}],"기타":[{"u":"서울대","e":"(제2외/한문)"},{"u":"충북대","e":"(제2외)"}]},"철학":{"국어":[{"u":"강원대(춘천)"},{"u":"건국대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"동국대"},{"u":"동아대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전남대"},{"u":"충남대"},{"u":"충북대"}],"영어":[{"u":"강원대(춘천)"},{"u":"건국대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"충남대"}],"윤리":[{"u":"강원대(춘천)"},{"u":"동국대"},{"u":"서울시립대"},{"u":"전남대"}],"일반사회":[{"u":"건국대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"동아대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"충북대"}],"대수":[{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"서울시립대"}],"확률과통계":[{"u":"서울시립대"}],"미적분Ⅰ":[{"u":"서울시립대"}],"미적분Ⅱ":[{"u":"서울시립대"}],"기하":[{"u":"서울시립대"}],"역사":[{"u":"서울시립대"}],"지리":[{"u":"서울시립대"}],"기타":[{"u":"강원대(춘천)","e":"(한문/교양)"},{"u":"동국대","e":"(한문/교양)"},{"u":"서울대","e":"(제2외/한문)"},{"u":"영남대","e":"(교양)"},{"u":"충남대","e":"(제2외/한문)"}]}},"사회":{"경영학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"기타":[{"u":"논술"},{"u":"심리학"}]},"경제학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"기타":[{"u":"논술"}]},"경찰행정학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"고전과윤리"},{"u":"철학"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"심리학"}]},"광고홍보학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"},{"u":"영어권문화"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"}],"역사":[{"u":"세계사"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"과학사"},{"u":"논술"}]},"국제학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"},{"u":"영미문학읽기"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"},{"u":"동아시아"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"기타":[{"u":"심리학"},{"u":"논술"}]},"금융보험학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"},{"u":"실용경제"}]},"노인복지학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"고전과윤리"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"심리학"}]},"도시지역학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"미적분Ⅱ":[{"u":"미적분"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"지구과학":[{"u":"지구과학Ⅰ"}],"기타":[{"u":"환경"}]},"무역유통학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"},{"u":"실용영어"},{"u":"영어권문화"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"},{"u":"실용경제"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"}]},"법학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"고전과윤리"},{"u":"철학"}],"기타":[{"u":"심리학"},{"u":"논술"}]},"보건행정학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"정치와법"},{"u":"사회･문화"},{"u":"경제"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"고전과윤리"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"비서학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"실용국어"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"실용영어"},{"u":"진로영어"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"}],"기타":[{"u":"심리학"}]},"사회복지학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"},{"u":"환경"}]},"사회학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"정치와법"},{"u":"사회･문화"},{"u":"경제"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"고전과윤리"}],"기타":[{"u":"심리학"},{"u":"논술"}]},"세무회계학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"},{"u":"실용경제"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}]},"신문방송학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"고전읽기"},{"u":"심화국어"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"}],"일반사회":[{"u":"정치와법"},{"u":"사회･문화"},{"u":"경제"},{"u":"사회문제탐구고전과윤리"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"철학"}],"기타":[{"u":"심리학"}]},"아동청소년복지학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"}],"기타":[{"u":"심리학"}]},"정보미디어학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"미적분Ⅱ":[{"u":"미적분"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"지리":[{"u":"세계지리"}],"역사":[{"u":"세계사"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"정보"},{"u":"심리학"},{"u":"논술"}]},"정치외교학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"},{"u":"진로영어"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"}],"기타":[{"u":"과학사"},{"u":"심리학"},{"u":"논술"}],"윤리":[{"u":"철학"}]},"지리학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"미적분Ⅱ":[{"u":"미적분"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"지구과학":[{"u":"지구과학Ⅰ"}],"기타":[{"u":"환경"}]},"항공서비스학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"},{"u":"영어권문화"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"}]},"행정학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"기타":[{"u":"심리학"}]},"호텔관광경영학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"},{"u":"영어독해와작문"},{"u":"진로영어"},{"u":"영어권문화"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"역사":[{"u":"세계사"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}]},"경영":{"국어":[{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"영남대"},{"u":"숭실대"},{"u":"전주대"},{"u":"한국기술교육대"},{"u":"한라대"}],"확률과통계":[{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"동국대"},{"u":"부산대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"서울과기대"},{"u":"숭실대"},{"u":"충남대"},{"u":"한국항공대"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"동국대"},{"u":"부산대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"서울과기대"},{"u":"숭실대"},{"u":"한국항공대"}],"영어":[{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"국립한밭대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"동국대"},{"u":"동아대"},{"u":"영남대"},{"u":"서울시립대"},{"u":"조선대"},{"u":"충남대"},{"u":"충북대"},{"u":"한국기술교육대"}],"대수":[{"u":"광운대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"동국대"},{"u":"동아대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"서울과기대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"전남대"},{"u":"조선대"},{"u":"한국기술교육대"},{"u":"한국항공대"}],"일반사회":[{"u":"광운대"},{"u":"국립한밭대"},{"u":"단국대⁎"},{"u":"단국대(천안)⁎"},{"u":"동국대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"숭실대"},{"u":"전남대"},{"u":"충남대"},{"u":"한국기술교육대"}],"지리":[{"u":"광운대"}],"윤리":[{"u":"광운대"}],"기타":[{"u":"광운대","e":"(제2외)"},{"u":"서울대","e":"(제2외/한문)"},{"u":"협성대*"}],"미적분Ⅱ":[{"u":"동국대"},{"u":"부산대"},{"u":"서울과기대"},{"u":"한양대"}],"물리학":[{"u":"아주대⁎"},{"u":"한양대"}],"기하":[{"u":"한양대"}],"화학":[{"u":"한양대"}],"생명과학":[{"u":"한양대"}]},"심리":{"확률과통계":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"충남대"}],"국어":[{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"영남대"},{"u":"전주대"},{"u":"조선대"},{"u":"충남대"}],"영어":[{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"영남대"},{"u":"전남대"},{"u":"조선대"},{"u":"충남대"},{"u":"충북대"}],"일반사회":[{"u":"강원대(춘천)"},{"u":"광운대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"전남대"},{"u":"충남대"}],"대수":[{"u":"광운대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"충북대"}],"미적분Ⅰ":[{"u":"광운대"},{"u":"아주대⁎"},{"u":"영남대"}],"윤리":[{"u":"광운대"}],"기타":[{"u":"서울대","e":"(제2외/한문)"}],"물리학":[{"u":"영남대"}]}},"교육":{"가정교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"경제"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"고전과윤리"}],"생명과학":[{"u":"생명과학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"정보"}]},"교육학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"고전과윤리"},{"u":"철학"}],"역사":[{"u":"동아시아사"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"지구과학":[{"u":"지구과학Ⅰ"}],"기타":[{"u":"심리학"}]},"국어교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"철학"}],"역사":[{"u":"동아시아사"}]},"독어교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"역사":[{"u":"세계사"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"기타":[{"u":"심리학"}]},"물리교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"융합과학"},{"u":"심리학"}]},"미술교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"과학사"},{"u":"심리학"}]},"불어교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"역사":[{"u":"세계사"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"기타":[{"u":"심리학"}]},"생물교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"융합과학"},{"u":"환경"}]},"수학교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"확률과통계":[{"u":"확률과통계"}],"미적분Ⅱ":[{"u":"미적분"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"지리":[{"u":"한국지리"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"경제"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"지구과학":[{"u":"지구과학Ⅰ"}],"기타":[{"u":"심리학"}]},"역사교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"고전과윤리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"기타":[{"u":"심리학"}]},"영어교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"영어권문화"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"윤리와사상"},{"u":"철학"}],"일반사회":[{"u":"사회문제탐구"}],"기타":[{"u":"심리학"}]},"유아교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"고전과윤리"},{"u":"철학"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"},{"u":"환경"}]},"윤리교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"고전과윤리"},{"u":"철학"}],"역사":[{"u":"동아시아사"},{"u":"세계사"}],"기타":[{"u":"환경"}]},"음악교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어회화"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}],"일반사회":[{"u":"경제"},{"u":"사회･문화"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"}],"기타":[{"u":"심리학"}]},"일반사회교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"},{"u":"철학"}],"기타":[{"u":"심리학"}]},"일어교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"윤리":[{"u":"생활과윤리"}],"역사":[{"u":"동아시아사"}],"기타":[{"u":"심리학"}]},"지구과학교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"기타":[{"u":"과학사"},{"u":"생활과과학"},{"u":"융합과학"},{"u":"환경"},{"u":"심리학"}]},"지리교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"지구과학":[{"u":"지구과학Ⅰ"}],"윤리":[{"u":"철학"}],"기타":[{"u":"심리학"},{"u":"환경"}]},"체육교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"정치와법"},{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"초등교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"심화국어"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"},{"u":"진로영어"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"}],"역사":[{"u":"세계사"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"지구과학":[{"u":"지구과학Ⅰ"}]},"특수교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"일반사회":[{"u":"사회･문화"},{"u":"정치와법"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"고전과윤리"},{"u":"철학"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"지구과학":[{"u":"지구과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"화학교육과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"},{"u":"영어독해와작문"},{"u":"영어회화"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"융합과학"},{"u":"환경"},{"u":"심리학"}]},"국어교육":{"국어":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"단국대"},{"u":"동국대"},{"u":"전남대"},{"u":"전북대"},{"u":"전주대"},{"u":"조선대"},{"u":"충남대"},{"u":"충북대"}],"역사":[{"u":"강원대(춘천)"}],"기타":[{"u":"강원대(춘천)","e":"(한문)"},{"u":"서울대","e":"(제2외/한문)"},{"u":"충남대","e":"(제2외/한문)"}],"대수":[{"u":"단국대"}],"영어":[{"u":"단국대"},{"u":"충남대"}],"일반사회":[{"u":"단국대"},{"u":"동국대"},{"u":"충남대"}]},"수학교육":{"확률과통계":[{"u":"강원대(춘천)"},{"u":"부산대"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"서울대"}],"미적분Ⅱ":[{"u":"강원대(춘천)"},{"u":"고려대"},{"u":"부산대"},{"u":"서울대"}],"기하":[{"u":"강원대(춘천)"},{"u":"고려대"},{"u":"부산대"},{"u":"서울대"}],"영어":[{"u":"강원대(춘천)"},{"u":"단국대"}],"생명과학":[{"u":"강원대(춘천)"}],"대수":[{"u":"경북대"},{"u":"단국대"},{"u":"동국대"},{"u":"영남대"},{"u":"전남대"},{"u":"전북대"},{"u":"전주대"},{"u":"조선대"},{"u":"충남대"},{"u":"충북대"}],"국어":[{"u":"단국대"},{"u":"영남대"}],"물리학":[{"u":"단국대"},{"u":"서울대"},{"u":"영남대"},{"u":"충남대"},{"u":"충북대"}]}},"자연":{"가정관리학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"},{"u":"영어독해와작문"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"경제"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"},{"u":"고전과윤리"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"심리학"}]},"농생물학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"},{"u":"영어독해와작문"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"환경"}]},"농업학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"},{"u":"영어독해와작문"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"환경"}]},"동물자원학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"},{"u":"영어독해와작문"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"환경"}]},"물리학과":{"대수":[{"u":"가톨릭대"},{"u":"경북대"},{"u":"경희대"},{"u":"광운대"},{"u":"국민대"},{"u":"동국대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전남대"},{"u":"전북대"},{"u":"충남대"},{"u":"충북대"}],"물리학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"광운대"},{"u":"국민대"},{"u":"동국대"},{"u":"부산대"},{"u":"서울대"},{"u":"숭실대"},{"u":"영남대"},{"u":"인하대"},{"u":"전남대"},{"u":"전북대"},{"u":"중앙대"},{"u":"충남대*"},{"u":"충북대"}],"확률과통계":[{"u":"강원대(춘천)"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"국민대"}],"미적분Ⅱ":[{"u":"강원대(춘천)"},{"u":"고려대"},{"u":"부산대"},{"u":"서울대"},{"u":"중앙대"}],"기하":[{"u":"강원대(춘천)"},{"u":"부산대"},{"u":"서울대"},{"u":"중앙대"}],"화학":[{"u":"경희대"},{"u":"광운대"},{"u":"동국대"},{"u":"부산대"},{"u":"영남대"},{"u":"중앙대"}],"생명과학":[{"u":"광운대"}],"영어":[{"u":"영남대"},{"u":"전남대"}]},"산림원예학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"환경"}]},"생명과학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"과학사"},{"u":"환경"}]},"생명자원학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"환경"}]},"수산학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"환경"}]},"수의학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"일반사회":[{"u":"정치와법"},{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"윤리와사상"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"환경"}]},"수학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"물리학":[{"u":"물리Ⅰ"},{"u":"물리Ⅱ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"과학사"}]},"식품영양학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"일반사회":[{"u":"사회･문화"},{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}]},"식품조리학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}]},"애완동물학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"}],"기타":[{"u":"환경"}]},"의류의상학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"일반사회":[{"u":"경제"},{"u":"사회･문화"}],"지리":[{"u":"한국지리"},{"u":"세계지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"지구과학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"환경"}]},"천문기상학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"과학사"},{"u":"환경"}]},"통계학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"일반사회":[{"u":"경제"},{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}]},"화학과":{"화학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"광운대"},{"u":"국민대"},{"u":"동국대"},{"u":"부산대"},{"u":"서울과기대"},{"u":"서울대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전남대"},{"u":"중앙대"}],"확률과통계":[{"u":"강원대(춘천)"},{"u":"서울과기대"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"국민대"},{"u":"서울과기대"}],"미적분Ⅱ":[{"u":"강원대(춘천)"},{"u":"고려대"},{"u":"서울대"},{"u":"중앙대"}],"생명과학":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"광운대"},{"u":"부산대"},{"u":"영남대"},{"u":"중앙대"}],"물리학":[{"u":"경기대"},{"u":"경희대"},{"u":"광운대"},{"u":"국민대"},{"u":"동국대"},{"u":"동아대"},{"u":"서울과기대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"전북대"},{"u":"중앙대"},{"u":"충북대"}],"대수":[{"u":"경희대"},{"u":"광운대"},{"u":"동국대"},{"u":"동아대"},{"u":"서울과기대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"아주대*"},{"u":"영남대"},{"u":"전북대"},{"u":"충북대"}],"기하":[{"u":"서울대"}],"영어":[{"u":"영남대"}]},"생명과학":{"화학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"동국대"},{"u":"부산대"},{"u":"서울과기대"},{"u":"서울시립대"},{"u":"영남대"},{"u":"중앙대"},{"u":"충남대"}],"생명과학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"동국대"},{"u":"부산대"},{"u":"서울과기대"},{"u":"서울대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"중앙대"},{"u":"충남대"}],"미적분Ⅰ":[{"u":"경북대"},{"u":"경희대"},{"u":"서울대"},{"u":"충남대"}],"대수":[{"u":"경희대"},{"u":"동국대"},{"u":"서울과기대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전북대"},{"u":"충남대"}],"확률과통계":[{"u":"경희대"},{"u":"충남대"}],"미적분Ⅱ":[{"u":"경희대"},{"u":"고려대"},{"u":"서울대"},{"u":"중앙대"},{"u":"충남대"}],"물리학":[{"u":"동국대"},{"u":"동아대"},{"u":"서울과기대"},{"u":"영남대"},{"u":"전북대"}],"영어":[{"u":"동아대"},{"u":"영남대"}],"기하":[{"u":"서울대"},{"u":"중앙대"}]},"물리":{"대수":[{"u":"가톨릭대"},{"u":"경북대"},{"u":"경희대"},{"u":"광운대"},{"u":"국민대"},{"u":"동국대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전남대"},{"u":"전북대"},{"u":"충남대"},{"u":"충북대"}],"물리학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"광운대"},{"u":"국민대"},{"u":"동국대"},{"u":"부산대"},{"u":"서울대"},{"u":"숭실대"},{"u":"영남대"},{"u":"인하대"},{"u":"전남대"},{"u":"전북대"},{"u":"중앙대"},{"u":"충남대*"},{"u":"충북대"}],"확률과통계":[{"u":"강원대(춘천)"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"국민대"}],"미적분Ⅱ":[{"u":"강원대(춘천)"},{"u":"고려대"},{"u":"부산대"},{"u":"서울대"},{"u":"중앙대"}],"기하":[{"u":"강원대(춘천)"},{"u":"부산대"},{"u":"서울대"},{"u":"중앙대"}],"화학":[{"u":"경희대"},{"u":"광운대"},{"u":"동국대"},{"u":"부산대"},{"u":"영남대"},{"u":"중앙대"}],"생명과학":[{"u":"광운대"}],"영어":[{"u":"영남대"},{"u":"전남대"}]},"화학":{"화학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"광운대"},{"u":"국민대"},{"u":"동국대"},{"u":"부산대"},{"u":"서울과기대"},{"u":"서울대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"영남대"},{"u":"전남대"},{"u":"중앙대"}],"확률과통계":[{"u":"강원대(춘천)"},{"u":"서울과기대"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"국민대"},{"u":"서울과기대"}],"미적분Ⅱ":[{"u":"강원대(춘천)"},{"u":"고려대"},{"u":"서울대"},{"u":"중앙대"}],"생명과학":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"광운대"},{"u":"부산대"},{"u":"영남대"},{"u":"중앙대"}],"물리학":[{"u":"경기대"},{"u":"경희대"},{"u":"광운대"},{"u":"국민대"},{"u":"동국대"},{"u":"동아대"},{"u":"서울과기대"},{"u":"아주대⁎"},{"u":"영남대"},{"u":"전북대"},{"u":"중앙대"},{"u":"충북대"}],"대수":[{"u":"경희대"},{"u":"광운대"},{"u":"동국대"},{"u":"동아대"},{"u":"서울과기대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"아주대*"},{"u":"영남대"},{"u":"전북대"},{"u":"충북대"}],"기하":[{"u":"서울대"}],"영어":[{"u":"영남대"}]}},"공학":{"(안경)광학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}]},"건축설비공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"정보"},{"u":"환경"}]},"건축학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"지리":[{"u":"세계지리"},{"u":"한국지리"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"지구과학":[{"u":"지구과학Ⅰ"}],"기타":[{"u":"정보"},{"u":"환경"}]},"게임공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"기계공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리Ⅰ"},{"u":"물리Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"정보"}]},"도시공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"지리":[{"u":"세계지리"},{"u":"한국지리"}],"물리학":[{"u":"물리Ⅰ"},{"u":"물리Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"},{"u":"환경"}]},"메카트로닉스(기전)공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리Ⅰ"},{"u":"물리Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"반도체세라믹공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"정보"}]},"빅데이터융합학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"},{"u":"실용수학"},{"u":"인공지능수학"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"경제"},{"u":"사회‧문화"},{"u":"사회문제탐구"},{"u":"실용경제"}],"윤리":[{"u":"생활과윤리"}],"기타":[{"u":"정보"},{"u":"인공지능기초"}]},"산업공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"},{"u":"경제수학"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"사회･문화"},{"u":"경제"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"생명공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어회화"},{"u":"영어Ⅰ"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"과학사"},{"u":"환경"}]},"섬유공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"소방방재학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"융합과학"}]},"신소재공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"에너지공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"경제"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"환경"},{"u":"정보"}]},"응용소프트웨어공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"인공지능수학"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"융합과학"},{"u":"정보"},{"u":"인공지능기초"}]},"인공지능학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"},{"u":"인공지능수학"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"융합과학"},{"u":"정보"},{"u":"인공지능기초"}]},"자동차공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"정보"},{"u":"환경"}]},"재료금속공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"전기공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분","core":true}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하","core":true}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ","core":true},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ","core":true},{"u":"화학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"전자공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"정보보안보호학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"인공지능수학"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"}],"기타":[{"u":"융합과학"},{"u":"정보"},{"u":"인공지능기초"}]},"정보통신공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"}],"지구과학":[{"u":"지구과학Ⅰ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"제어계측공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"조경학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"환경"}]},"지능형모빌리티융합학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"},{"u":"인공지능수학"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"융합과학"},{"u":"정보"},{"u":"인공지능기초"}]},"지상교통공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"},{"u":"환경"}]},"컴퓨터공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"인공지능수학"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"},{"u":"인공지능기초"}]},"토목공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"},{"u":"환경"}]},"항공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"해양공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"},{"u":"수학과제탐구"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"정보"},{"u":"환경"}]},"헬스케어메디컬공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"사회‧문화"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"정보"}]},"화학공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"}]},"환경공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"지리":[{"u":"한국지리"},{"u":"세계지리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"},{"u":"지구과학Ⅱ"}],"기타":[{"u":"융합과학"},{"u":"정보"},{"u":"환경"}]},"기계공학":{"미적분Ⅰ":[{"u":"강원대(삼척)"},{"u":"국민대"},{"u":"서울시립대"},{"u":"전주대"},{"u":"한양대(ERICA)"}],"미적분Ⅱ":[{"u":"강원대(삼척)"},{"u":"고려대"},{"u":"국민대"},{"u":"부산대"},{"u":"서울대"},{"u":"서울시립대"},{"u":"전주대"},{"u":"중앙대"}],"영어":[{"u":"강원대(삼척)"},{"u":"단국대*"},{"u":"영남대"},{"u":"한국기술교육대"}],"물리학":[{"u":"강원대(삼척)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"국민대"},{"u":"단국대*"},{"u":"동아대"},{"u":"부산대"},{"u":"서울과기대"},{"u":"서울대"},{"u":"서울시립대"},{"u":"아주대*"},{"u":"영남대"},{"u":"인하대"},{"u":"전남대"},{"u":"전북대"},{"u":"조선대"},{"u":"중앙대"},{"u":"충북대"},{"u":"한국기술교육대"},{"u":"한국항공대"},{"u":"한양대(ERICA)"}],"화학":[{"u":"강원대(삼척)"},{"u":"경북대"},{"u":"경희대"},{"u":"부산대"},{"u":"서울과기대"},{"u":"영남대"},{"u":"인하대"},{"u":"중앙대"}],"대수":[{"u":"경북대"},{"u":"경희대"},{"u":"단국대*"},{"u":"동아대"},{"u":"서울과기대"},{"u":"아주대*"},{"u":"영남대"},{"u":"전남대"},{"u":"전북대"},{"u":"전주대"},{"u":"조선대"},{"u":"충북대"},{"u":"한국기술교육대"},{"u":"한국항공대"}],"기하":[{"u":"국민대"},{"u":"부산대"},{"u":"서울대"},{"u":"서울시립대"},{"u":"전주대"},{"u":"중앙대"}],"국어":[{"u":"단국대*"},{"u":"한국기술교육대"},{"u":"한라대"}],"확률과통계":[{"u":"서울시립대"}]},"컴퓨터공학":{"대수":[{"u":"가톨릭대"},{"u":"건국대"},{"u":"경북대"},{"u":"경희대"},{"u":"광운대"},{"u":"단국대*"},{"u":"동국대"},{"u":"동아대"},{"u":"서울과기대"},{"u":"영남대"},{"u":"전남대"},{"u":"전북대"},{"u":"전주대"},{"u":"조선대"},{"u":"충남대"},{"u":"충북대"},{"u":"아주대*"},{"u":"원광대"},{"u":"한국기술교육대"},{"u":"한국항공대"}],"물리학":[{"u":"가톨릭대"},{"u":"건국대"},{"u":"경북대"},{"u":"광운대"},{"u":"국민대"},{"u":"단국대*"},{"u":"동아대"},{"u":"서울과기대"},{"u":"서울시립대"},{"u":"숭실대*"},{"u":"영남대"},{"u":"전남대"},{"u":"전북대"},{"u":"조선대"},{"u":"충남대*"},{"u":"충북대"},{"u":"아주대*"},{"u":"한국기술교육대"},{"u":"한국항공대"}],"확률과통계":[{"u":"강원대(춘천)"},{"u":"부산대"},{"u":"전주대"},{"u":"충남대"},{"u":"충북대"},{"u":"한양대(ERICA)"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"건국대"},{"u":"국민대"},{"u":"서울시립대"},{"u":"전주대"},{"u":"충남대"},{"u":"충북대"},{"u":"한양대(ERICA)"}],"미적분Ⅱ":[{"u":"강원대(춘천)"},{"u":"건국대"},{"u":"고려대"},{"u":"국민대"},{"u":"부산대"},{"u":"서울시립대"},{"u":"숭실대"},{"u":"전주대"},{"u":"충남대"},{"u":"충북대"},{"u":"중앙대"}],"영어":[{"u":"강원대(춘천)"},{"u":"단국대*"},{"u":"동아대"},{"u":"영남대"},{"u":"충북대"},{"u":"한국기술교육대"}],"기하":[{"u":"건국대"},{"u":"고려대"},{"u":"국민대"},{"u":"부산대"},{"u":"숭실대"},{"u":"중앙대"}],"화학":[{"u":"경북대"},{"u":"원광대"},{"u":"전남대"},{"u":"중앙대"},{"u":"충남대"}],"국어":[{"u":"단국대*"},{"u":"영남대"},{"u":"한국기술교육대"},{"u":"한라대"}],"기타":[{"u":"전주대","e":"(기술·가정/정보)"},{"u":"협성대*"}],"생명과학":[{"u":"원광대"},{"u":"전남대"},{"u":"중앙대"},{"u":"충남대"}]}},"의약":{"간호학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"융합과학"},{"u":"심리학"}]},"물리치료학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"방사선학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"정보"}]},"보건관리학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"정보"}]},"약학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"응급구조학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"의료공학(의료장비)과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"},{"u":"물리학Ⅱ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"정보"}]},"의학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"기하":[{"u":"기하"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"물리학":[{"u":"물리학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"임상병리학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"}],"일반사회":[{"u":"정치와법"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"작업치료학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"심리학"}]},"재활학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"심리학"}]},"치기공학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"}]},"치위생학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"}],"생명과학":[{"u":"생명과학Ⅰ"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"치의학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"}],"윤리":[{"u":"생활과윤리"}],"물리학":[{"u":"물리학Ⅰ"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"기타":[{"u":"심리학"}]},"한의학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"동아시아사"}],"지리":[{"u":"한국지리"}],"일반사회":[{"u":"정치와법"}],"화학":[{"u":"화학Ⅰ"},{"u":"화학Ⅱ"}],"생명과학":[{"u":"생명과학Ⅰ"},{"u":"생명과학Ⅱ"}],"지구과학":[{"u":"지구과학Ⅰ"}],"물리학":[{"u":"물리학Ⅰ"}],"기타":[{"u":"심리학"}]},"약학":{"대수":[{"u":"가톨릭대"},{"u":"경북대"},{"u":"경희대"},{"u":"덕성여대"},{"u":"동국대"},{"u":"영남대"}],"화학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경성대"},{"u":"경희대"},{"u":"덕성여대"},{"u":"동국대"},{"u":"서울대"},{"u":"부산대"},{"u":"영남대"},{"u":"한양대(ERICA)"}],"생명과학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경성대"},{"u":"경희대"},{"u":"덕성여대"},{"u":"동국대"},{"u":"서울대"},{"u":"부산대"},{"u":"영남대"},{"u":"한양대(ERICA)"}],"확률과통계":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"}],"미적분Ⅱ":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경성대"},{"u":"경희대"},{"u":"서울대"}],"물리학":[{"u":"경북대"},{"u":"영남대"}],"기하":[{"u":"경성대"},{"u":"서울대"}],"영어":[{"u":"영남대"}]},"의예":{"대수":[{"u":"가톨릭대"},{"u":"건국대(글로컬)"},{"u":"경북대"},{"u":"경희대"},{"u":"동아대"},{"u":"아주대*"},{"u":"영남대"},{"u":"원광대"},{"u":"전남대"},{"u":"전북대"},{"u":"조선대"},{"u":"충남대"}],"화학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"부산대"},{"u":"영남대"},{"u":"원광대"},{"u":"중앙대"},{"u":"충남대"}],"생명과학":[{"u":"가톨릭대"},{"u":"강원대(춘천)"},{"u":"건국대(글로컬)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"부산대"},{"u":"서울대"},{"u":"영남대"},{"u":"원광대"},{"u":"전남대"},{"u":"중앙대"},{"u":"충남대"}],"국어":[{"u":"강원대(춘천)"},{"u":"동아대"}],"확률과통계":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"}],"미적분Ⅰ":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"}],"미적분Ⅱ":[{"u":"강원대(춘천)"},{"u":"경북대"},{"u":"경희대"},{"u":"고려대"},{"u":"서울대"},{"u":"중앙대"}],"영어":[{"u":"강원대(춘천)"},{"u":"동아대"},{"u":"영남대"},{"u":"전남대"},{"u":"전북대"},{"u":"충북대"}],"물리학":[{"u":"경북대"},{"u":"경희대"},{"u":"동아대"},{"u":"아주대*"},{"u":"영남대"},{"u":"조선대"},{"u":"충북대"}],"기하":[{"u":"서울대"},{"u":"중앙대"}]}},"예체능":{"경호학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"일반사회":[{"u":"정치와법"},{"u":"사회･문화"},{"u":"사회문제탐구"}],"윤리":[{"u":"생활과윤리"}],"생명과학":[{"u":"생명과학I"}],"기타":[{"u":"심리학"}]},"공예학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"지리":[{"u":"여행지리"}]},"만화애니메이션학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"정보"},{"u":"심리학"}]},"무용학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"}],"역사":[{"u":"세계사"}],"기타":[{"u":"심리학"}]},"미술학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"지리":[{"u":"세계지리"},{"u":"여행지리"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"}],"기타":[{"u":"심리학"}]},"방송연예과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"기타":[{"u":"심리학"}]},"뷰티아트과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"심리학"}]},"사진영상예술학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"정보"},{"u":"심리학"}]},"산업디자인학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"미적분Ⅱ":[{"u":"미적분"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"시각디자인학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"생활과과학"},{"u":"정보"},{"u":"심리학"}]},"실내디자인학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"지리":[{"u":"한국지리"},{"u":"여행지리"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"기타":[{"u":"심리학"}]},"실용음악과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"연극영화학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"},{"u":"고전읽기"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"음악학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"일반사회":[{"u":"사회･문화"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"음향과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"정보"},{"u":"심리학"}]},"조형학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"체육학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"윤리":[{"u":"생활과윤리"}],"일반사회":[{"u":"사회･문화"},{"u":"사회문제탐구"}],"물리학":[{"u":"물리학I"}],"생명과학":[{"u":"생명과학I"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"패션디자인학과":{"국어":[{"u":"화법과작문"},{"u":"문학"},{"u":"언어와매체"},{"u":"독서"}],"대수":[{"u":"수학Ⅰ"},{"u":"수학Ⅱ"}],"확률과통계":[{"u":"확률과통계"}],"영어":[{"u":"영어Ⅰ"},{"u":"영어Ⅱ"}],"역사":[{"u":"세계사"},{"u":"동아시아사"}],"윤리":[{"u":"생활과윤리"},{"u":"철학"}],"일반사회":[{"u":"사회･문화"}],"지리":[{"u":"여행지리"}],"기타":[{"u":"생활과과학"},{"u":"심리학"}]},"시각디자인":{"국어":[{"u":"강원대(삼척)"},{"u":"국립한밭대"},{"u":"동아대"},{"u":"조선대"}],"영어":[{"u":"강원대(삼척)"},{"u":"국립한밭대"},{"u":"동아대"}],"기타":[{"u":"강원대(삼척)","e":"(미술,미술창작,미술 감상과 비평)"},{"u":"조선대","e":"(산업디자인)"},{"u":"전주대","e":"(미술,기술가정,교양)"}],"일반사회":[{"u":"조선대"}]},"음악":{"국어":[{"u":"동아대"}],"영어":[{"u":"동아대"}]},"체육":{"국어":[{"u":"동아대"},{"u":"동양대"},{"u":"조선대"}],"미적분Ⅰ":[{"u":"동아대"},{"u":"동양대"}],"미적분Ⅱ":[{"u":"동아대"},{"u":"동양대"}],"기하":[{"u":"동아대"},{"u":"동양대"}],"영어":[{"u":"동아대"},{"u":"동양대"}],"일반사회":[{"u":"동아대"},{"u":"동양대"}],"물리학":[{"u":"동아대"},{"u":"동양대"}],"기타":[{"u":"한체대","e":"(체육스포츠과학,스포츠생활)"}]}}};
+
+const GYEYOL_CFG = {
+  "인문":  {main:"#c0392b",light:"#fff0f0",icon:"📚"},
+  "사회":  {main:"#d35400",light:"#fff8f0",icon:"🏛️"},
+  "교육":  {main:"#27ae60",light:"#f0fff4",icon:"🎓"},
+  "자연":  {main:"#2471a3",light:"#eaf4fd",icon:"🔬"},
+  "공학":  {main:"#7d3c98",light:"#f8f0ff",icon:"⚙️"},
+  "의약":  {main:"#b03a2e",light:"#fff5f5",icon:"🏥"},
+  "예체능":{main:"#148f77",light:"#f0fffc",icon:"🎨"},
+};
+const SUBJ_GROUP = {
+  "국어":"국어","영어":"영어",
+  "대수":"수학","확률과통계":"수학","미적분Ⅰ":"수학","미적분Ⅱ":"수학","기하":"수학",
+  "일반사회":"사회","역사":"사회","지리":"사회","윤리":"사회",
+  "물리학":"과학","화학":"과학","생명과학":"과학","지구과학":"과학","기타":"기타"
+};
+const GROUP_CFG = {
+  "국어":  {color:"#e74c3c",bg:"#fdf0f0"},
+  "영어":  {color:"#d35400",bg:"#fef5ec"},
+  "수학":  {color:"#2471a3",bg:"#eaf4fd"},
+  "사회":  {color:"#1e8449",bg:"#eafaf1"},
+  "과학":  {color:"#7d3c98",bg:"#f5eeff"},
+  "기타":  {color:"#616a6b",bg:"#f2f3f4"},
+};
+const GROUP_ORDER = ["국어","영어","수학","사회","과학","기타"];
+
+/* 3학년 선택과목 */
+const CURRICULUM = {
+  "3-1 선택 (5과목)":[
+    {n:"독서 토론과 글쓰기",g:"국어",t:"융합",c:3,s:"1학기"},
+    {n:"고전문학감상1",g:"국어",t:"진로",c:3,s:"1학기"},
+    {n:"수학과제 탐구",g:"수학",t:"융합",c:3,s:"1학기"},
+    {n:"미적분Ⅱ",g:"수학",t:"진로",c:3,s:"1학기"},
+    {n:"경제 수학",g:"수학",t:"진로",c:3,s:"1학기"},
+    {n:"영미 문학 읽기",g:"영어",t:"진로",c:3,s:"1학기"},
+    {n:"영어 발표와 토론",g:"영어",t:"진로",c:3,s:"1학기"},
+    {n:"현대사회와 윤리",g:"사회",t:"일반",c:3,s:"1학기"},
+    {n:"한국지리 탐구",g:"사회",t:"진로",c:3,s:"1학기"},
+    {n:"법과 사회",g:"사회",t:"진로",c:3,s:"1학기"},
+    {n:"국제 관계의 이해",g:"사회",t:"진로",c:3,s:"1학기"},
+    {n:"역사로 탐구하는 현대 세계",g:"사회",t:"융합",c:3,s:"1학기"},
+    {n:"사회문제 탐구",g:"사회",t:"융합",c:3,s:"1학기"},
+    {n:"금융과 경제생활",g:"사회",t:"융합",c:3,s:"1학기"},
+    {n:"전자기와 양자",g:"과학",t:"진로",c:3,s:"1학기"},
+    {n:"화학 반응의 세계",g:"과학",t:"진로",c:3,s:"1학기"},
+    {n:"생물의 유전",g:"과학",t:"진로",c:3,s:"1학기"},
+    {n:"행성우주과학",g:"과학",t:"진로",c:3,s:"1학기"},
+    {n:"융합과학 탐구",g:"과학",t:"융합",c:3,s:"1학기"},
+  ],
+  "3-2 선택 A (3과목)":[
+    {n:"주제 탐구 독서",g:"국어",t:"진로",c:3,s:"2학기"},
+    {n:"문학 감상과 비평",g:"국어",t:"진로",c:3,s:"2학기"},
+    {n:"고전문학감상2",g:"국어",t:"진로",c:3,s:"2학기"},
+    {n:"수학과 문화",g:"수학",t:"융합",c:3,s:"2학기"},
+    {n:"실용 통계",g:"수학",t:"융합",c:3,s:"2학기"},
+    {n:"실생활 영어 회화",g:"영어",t:"융합",c:3,s:"2학기"},
+    {n:"미디어 영어",g:"영어",t:"융합",c:3,s:"2학기"},
+  ],
+  "3-2 선택 B (4과목)":[
+    {n:"인문학과 윤리",g:"사회",t:"진로",c:3,s:"2학기"},
+    {n:"여행지리",g:"사회",t:"융합",c:3,s:"2학기"},
+    {n:"역사로 탐구하는 현대 세계",g:"사회",t:"융합",c:3,s:"2학기"},
+    {n:"사회문제 탐구",g:"사회",t:"융합",c:3,s:"2학기"},
+    {n:"금융과 경제생활",g:"사회",t:"융합",c:3,s:"2학기"},
+    {n:"과학 과제 연구",g:"과학",t:"진로",c:3,s:"2학기"},
+    {n:"생명화학 실험",g:"과학",t:"진로",c:3,s:"2학기"},
+    {n:"화학 실험",g:"과학",t:"진로",c:3,s:"2학기"},
+    {n:"기후변화와 환경생태",g:"과학",t:"융합",c:3,s:"2학기"},
+    {n:"과학의 역사와 문화",g:"과학",t:"융합",c:3,s:"2학기"},
+  ],
+  "3-2 교양 (1과목)":[
+    {n:"생태와 환경",g:"교양",t:"일반",c:2,s:"2학기"},
+    {n:"논술",g:"교양",t:"융합",c:2,s:"2학기"},
+    {n:"인간과 경제활동",g:"교양",t:"융합",c:2,s:"2학기"},
+  ],
+};
+
+/* 과목명 → 2028 데이터 키 매핑 (우리 학교 선택과목 기준) */
+const SUBJ_KEY_MAP = {
+  "독서 토론과 글쓰기":"국어","주제 탐구 독서":"국어","고전문학감상1":"국어","고전문학감상2":"국어","문학 감상과 비평":"국어",
+  "영미 문학 읽기":"영어","영어 발표와 토론":"영어","실생활 영어 회화":"영어","미디어 영어":"영어",
+  "미적분Ⅱ":"미적분Ⅱ","수학과제 탐구":"대수","기하":"기하","실용 통계":"확률과통계","경제 수학":"확률과통계","수학과 문화":"대수",
+  "현대사회와 윤리":"윤리","인문학과 윤리":"윤리",
+  "한국지리 탐구":"지리","여행지리":"지리",
+  "법과 사회":"일반사회","국제 관계의 이해":"일반사회","사회문제 탐구":"일반사회","금융과 경제생활":"일반사회","인간과 경제활동":"일반사회",
+  "역사로 탐구하는 현대 세계":"역사",
+  "전자기와 양자":"물리학","화학 반응의 세계":"화학","화학 실험":"화학","생명화학 실험":"생명과학",
+  "생물의 유전":"생명과학","행성우주과학":"지구과학",
+  "융합과학 탐구":"기타","과학 과제 연구":"기타","기후변화와 환경생태":"기타","과학의 역사와 문화":"기타",
+  "논술":"기타","생태와 환경":"기타",
+};
+
+/* ══════════════════════════════════════════
+   TAB 전환
+══════════════════════════════════════════ */
+function switchTab(tab){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  const tabs=['guide','consult'];
+  document.querySelectorAll('.nav-tab')[tabs.indexOf(tab)].classList.add('active');
+}
+
+/* ══════════════════════════════════════════
+   TAB 1: 학과별 권장과목 (원본 2028 방식)
+══════════════════════════════════════════ */
+let selG=null, selM=null;
+function initGuide(){
+  const grid=document.getElementById('gyeyol-grid');
+  Object.keys(DATA).forEach(g=>{
+    const cfg=GYEYOL_CFG[g];
+    const btn=document.createElement('button');
+    btn.className='gyeyol-btn'; btn.id='gyeyol-'+g;
+    btn.innerHTML=`<span>${cfg.icon}</span>${g}`;
+    btn.onclick=()=>selectGyeyol(g);
+    grid.appendChild(btn);
+  });
+}
+function selectGyeyol(g){
+  selG=g; selM=null;
+  const cfg=GYEYOL_CFG[g];
+  document.querySelectorAll('.gyeyol-btn').forEach(b=>{b.classList.remove('active');b.style.cssText='';});
+  const ab=document.getElementById('gyeyol-'+g);
+  ab.classList.add('active');
+  ab.style.cssText=`background:${cfg.main};border-color:${cfg.main};color:white;box-shadow:0 4px 14px ${cfg.main}44;`;
+  const ms=document.getElementById('major-section'); ms.style.display='block';
+  const mg=document.getElementById('major-grid'); mg.innerHTML='';
+  Object.keys(DATA[g]).sort().forEach(m=>{
+    const btn=document.createElement('button');
+    btn.className='major-btn'; btn.textContent=m; btn.id='major-'+m;
+    btn.onclick=()=>selectMajor(m); mg.appendChild(btn);
+  });
+  document.getElementById('result-section').style.display='none';
+}
+function selectMajor(m){
+  selM=m;
+  const cfg=GYEYOL_CFG[selG];
+  document.querySelectorAll('.major-btn').forEach(b=>{b.classList.remove('active');b.style.cssText='';});
+  const ab=document.getElementById('major-'+m);
+  ab.classList.add('active');
+  ab.style.cssText=`border-color:${cfg.main};color:${cfg.main};background:${cfg.light};`;
+  renderResult();
+}
+function renderResult(){
+  const subjects=DATA[selG][selM];
+  const cfg=GYEYOL_CFG[selG];
+  document.getElementById('result-section').style.display='block';
+  // 핵심과목 (3개 이상 대학이 권장하는 과목)
+  const key=Object.entries(subjects).filter(([s,u])=>Array.isArray(u)&&u.length>=3)
+    .sort((a,b)=>b[1].length-a[1].length).slice(0,5);
+  const kc=document.getElementById('key-card');
+  if(key.length>0){
+    let h=`<div class="key-card" style="background:linear-gradient(135deg,${cfg.light},white);border-color:${cfg.main}33;">
+      <div class="key-card-title" style="color:${cfg.main}">⭐ 핵심 권장 과목 <span>(3개 이상 대학 권장)</span></div>
+      <div class="key-tags">`;
+    key.forEach(([s,u])=>{
+      const sg=GROUP_CFG[SUBJ_GROUP[s]||'기타'];
+      h+=`<div class="key-tag" style="background:${sg.bg};border-color:${sg.color}44;color:${sg.color}">
+        ${s}<span class="cnt" style="background:${sg.color}">${u.length}개교</span></div>`;
+    });
+    h+=`</div></div>`; kc.innerHTML=h;
+  } else kc.innerHTML='';
+  // 그룹별 카드
+  const grouped={};
+  Object.entries(subjects).forEach(([s,u])=>{
+    if(!Array.isArray(u)) return;
+    const g=SUBJ_GROUP[s]||'기타';
+    if(!grouped[g]) grouped[g]=[];
+    grouped[g].push({s,u});
+  });
+  let h='';
+  GROUP_ORDER.forEach(gk=>{
+    if(!grouped[gk]) return;
+    const sg=GROUP_CFG[gk];
+    h+=`<div class="group-card">
+      <div class="group-header" style="background:${sg.bg};border-color:${sg.color}33;">
+        <div class="group-bar" style="background:${sg.color}"></div>
+        <span class="group-header-title" style="color:${sg.color}">${gk} 영역</span>
+      </div><div class="group-body">`;
+    grouped[gk].forEach(({s,u})=>{
+      const univs=u.map(x=>x.e?`${x.u}${x.e}`:x.u).join(', ');
+      h+=`<div class="subject-row">
+        <div class="subject-row-top">
+          <span class="subject-name">${s}</span>
+          <span class="univ-count" style="background:${sg.color}">${u.length}개교</span>
+        </div>
+        <div class="univ-list">${univs}</div>
+      </div>`;
+    });
+    h+=`</div></div>`;
+  });
+  document.getElementById('group-cards').innerHTML=h;
+}
+
+/* ══════════════════════════════════════════
+   TAB 2: 수요조사
+══════════════════════════════════════════ */
+function initSurvey(){
+  const allSem1=CURRICULUM["3-1 선택 (5과목)"];
+  const allSem2=[
+    ...CURRICULUM["3-2 선택 A (3과목)"],
+    ...CURRICULUM["3-2 선택 B (4과목)"],
+    ...CURRICULUM["3-2 교양 (1과목)"],
+  ];
+  buildSurveyItems('sv1-content','3학년 1학기 선택과목 (5과목 선택)',allSem1);
+  buildSurveyItems2('sv2-content');
+  renderStats(); renderSaved();
+}
+function buildSurveyItems(id,label,items){
+  const GROUP_CLR={국어:"#e74c3c",영어:"#d35400",수학:"#2471a3",사회:"#1e8449",과학:"#7d3c98",교양:"#616a6b"};
+  let h=`<div class="sem-section"><div class="sem-title">${label}</div><div class="select-grid">`;
+  items.forEach(s=>{
+    const c=GROUP_CLR[s.g]||'#888';
+    h+=`<label class="select-item" onclick="toggleItem(this,'${s.n}')">
+      <input type="checkbox" name="subj" value="${s.n}" onclick="event.stopPropagation()">
+      <span class="select-item-name">${s.n}</span>
+      <span class="select-item-tag" style="color:${c};background:${c}18">${s.g}</span>
+      <span class="select-item-credits">${s.c}학점</span>
+    </label>`;
+  });
+  h+=`</div></div>`;
+  document.getElementById(id).innerHTML=h;
+}
+function buildSurveyItems2(id){
+  const GROUP_CLR={국어:"#e74c3c",영어:"#d35400",수학:"#2471a3",사회:"#1e8449",과학:"#7d3c98",교양:"#616a6b"};
+  const sems={
+    "3-2 선택 A (3과목)":CURRICULUM["3-2 선택 A (3과목)"],
+    "3-2 선택 B (4과목)":CURRICULUM["3-2 선택 B (4과목)"],
+    "3-2 교양 (1과목)":CURRICULUM["3-2 교양 (1과목)"],
+  };
+  let h='';
+  Object.entries(sems).forEach(([lbl,items])=>{
+    h+=`<div class="sem-section"><div class="sem-title">${lbl}</div><div class="select-grid">`;
+    items.forEach(s=>{
+      const c=GROUP_CLR[s.g]||'#888';
+      h+=`<label class="select-item" onclick="toggleItem(this,'${s.n}')">
+        <input type="checkbox" name="subj" value="${s.n}" onclick="event.stopPropagation()">
+        <span class="select-item-name">${s.n}</span>
+        <span class="select-item-tag" style="color:${c};background:${c}18">${s.g}</span>
+        <span class="select-item-credits">${s.c}학점</span>
+      </label>`;
+    });
+    h+=`</div></div>`;
+  });
+  document.getElementById(id).innerHTML=h;
+}
+function toggleItem(el,n){
+  el.classList.toggle('selected');
+  const chk=el.querySelector('input[type=checkbox]');
+  if(chk) chk.checked=el.classList.contains('selected');
+}
+function switchSurveyTab(t){
+  document.getElementById('survey-sem1').style.display=t==='sem1'?'block':'none';
+  document.getElementById('survey-sem2').style.display=t==='sem2'?'block':'none';
+  document.querySelectorAll('.sem-tab').forEach((b,i)=>b.classList.toggle('active',i===(t==='sem1'?0:1)));
+}
+function loadSurvey(){try{return JSON.parse(localStorage.getItem('sv3_v3')||'{}')}catch{return {};}}
+function saveSurvey(d){localStorage.setItem('sv3_v3',JSON.stringify(d));}
+function submitSurvey(){
+  const name=document.getElementById('stu-name').value.trim();
+  const num=document.getElementById('stu-num').value.trim();
+  if(!name||!num){showToast('이름과 번호를 입력해주세요!');return;}
+  const sel=Array.from(document.querySelectorAll('input[name=subj]:checked')).map(c=>c.value);
+  if(sel.length===0){showToast('과목을 하나 이상 선택해주세요!');return;}
+  const d=loadSurvey(); d[`${name}_${num}`]={name,num,subjects:sel,time:new Date().toLocaleString('ko-KR')};
+  saveSurvey(d); renderStats(); renderSaved();
+  showToast(`✅ ${name} 학생 저장! (${sel.length}과목)`);
+}
+function renderStats(){
+  const d=loadSurvey(); const total=Object.keys(d).length;
+  document.getElementById('stats-num').textContent=total;
+  if(total===0){document.getElementById('stats-body').innerHTML=`<div style="text-align:center;padding:30px;color:var(--muted);font-size:13px">아직 데이터가 없어요</div>`;return;}
+  const cnt={};
+  Object.values(d).forEach(({subjects})=>subjects.forEach(s=>{cnt[s]=(cnt[s]||0)+1;}));
+  const sorted=Object.entries(cnt).sort((a,b)=>b[1]-a[1]);
+  const s1=new Set(CURRICULUM["3-1 선택 (5과목)"].map(x=>x.n));
+  const s2=new Set([...CURRICULUM["3-2 선택 A (3과목)"],...CURRICULUM["3-2 선택 B (4과목)"],...CURRICULUM["3-2 교양 (1과목)"]].map(x=>x.n));
+  let h='';
+  [['1학기',s1],['2학기',s2]].forEach(([lbl,ns])=>{
+    const sd=sorted.filter(([n])=>ns.has(n));
+    if(!sd.length) return;
+    h+=`<div class="stats-sem"><div class="stats-sem-title">3학년 ${lbl} TOP</div>`;
+    sd.slice(0,8).forEach(([n,c])=>{
+      h+=`<div class="stats-row">
+        <span class="stats-name">${n}</span>
+        <div class="stats-bar-wrap"><div class="stats-bar" style="width:${Math.round(c/total*100)}%"></div></div>
+        <span class="stats-count">${c}명</span>
+      </div>`;
+    });
+    h+=`</div>`;
+  });
+  document.getElementById('stats-body').innerHTML=h;
+}
+function renderSaved(){
+  const d=loadSurvey(); const entries=Object.entries(d);
+  const el=document.getElementById('saved-entries');
+  if(!entries.length){el.innerHTML=`<div style="font-size:12px;color:#aaa;text-align:center;padding:8px">아직 없습니다</div>`;return;}
+  el.innerHTML=entries.map(([k,v])=>`
+    <div class="saved-entry">
+      <span class="saved-entry-name">${v.name}</span>
+      <span style="font-size:11px;color:var(--muted)">${v.num}번 · ${v.subjects.length}과목</span>
+      <button class="saved-del" onclick="delEntry('${k}')">✕</button>
+    </div>`).join('');
+}
+function delEntry(k){const d=loadSurvey();delete d[k];saveSurvey(d);renderStats();renderSaved();showToast('삭제됨');}
+
+
+/* ══════════════════════════════════════════
+   통합 진로상담 & 수요조사 탭
+══════════════════════════════════════════ */
+
+/* ── 2학년 수강신청 데이터 ── */
+const STUDENT_DB = [{"id":"20101","class":1,"num":1,"name":"고시연","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","동아시아 역사 기행","정치","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20102","class":1,"num":2,"name":"고채은","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","동아시아 역사 기행","정치","윤리문제 탐구","일본어 회화"]},{"id":"20103","class":1,"num":3,"name":"김리원","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20104","class":1,"num":4,"name":"김소연","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","중국어","동아시아 역사 기행","정치","윤리문제 탐구","중국어 회화"]},{"id":"20105","class":1,"num":5,"name":"박한아","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","동아시아 역사 기행","정치","윤리문제 탐구","일본어 회화"]},{"id":"20106","class":1,"num":6,"name":"양연수","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20107","class":1,"num":7,"name":"양은아","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20108","class":1,"num":8,"name":"오예주","gender":"여","selected":["세계사","사회와 문화","지구과학","일본어","동아시아 역사 기행","정치","경제","일본어 회화"]},{"id":"20109","class":1,"num":9,"name":"오예진","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","동아시아 역사 기행","정치","윤리문제 탐구","일본어 회화"]},{"id":"20110","class":1,"num":10,"name":"이유빈","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","중국어","동아시아 역사 기행","정치","윤리문제 탐구","중국어 회화"]},{"id":"20111","class":1,"num":11,"name":"이현선","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","중국어","정치","경제","기후변화와 지속가능한 세계","중국어 회화"]},{"id":"20112","class":1,"num":12,"name":"한지민","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","정치","경제","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20113","class":1,"num":13,"name":"강승빈","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","데이터 과학","도시의 미래 탐구","정치","경제","소프트웨어와 생활"]},{"id":"20114","class":1,"num":14,"name":"김도현","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20115","class":1,"num":15,"name":"김시현","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20116","class":1,"num":16,"name":"김은호","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","정치","일본어 회화"]},{"id":"20117","class":1,"num":17,"name":"김재현","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20118","class":1,"num":18,"name":"김태균","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","데이터 과학","동아시아 역사 기행","정치","경제","소프트웨어와 생활"]},{"id":"20119","class":1,"num":19,"name":"김태현","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","데이터 과학","동아시아 역사 기행","정치","경제","소프트웨어와 생활"]},{"id":"20120","class":1,"num":20,"name":"안재연","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","데이터 과학","도시의 미래 탐구","정치","경제","소프트웨어와 생활"]},{"id":"20121","class":1,"num":21,"name":"양수웅","gender":"남","selected":["세계사","사회와 문화","지구과학","일본어","동아시아 역사 기행","정치","경제","일본어 회화"]},{"id":"20122","class":1,"num":22,"name":"여운찬","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","동아시아 역사 기행","정치","경제","일본어 회화"]},{"id":"20123","class":1,"num":23,"name":"이도기","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","윤리문제 탐구","일본어 회화"]},{"id":"20124","class":1,"num":24,"name":"이상명","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","정치","일본어 회화"]},{"id":"20125","class":1,"num":25,"name":"이상민","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","경제","소프트웨어와 생활"]},{"id":"20126","class":1,"num":26,"name":"현주혁","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","중국어","도시의 미래 탐구","정치","경제","중국어 회화"]},{"id":"20201","class":2,"num":1,"name":"고재이","gender":"여","selected":["윤리와 사상","물리학","화학","일본어","경제","역학과 에너지","물질과 에너지","일본어 회화"]},{"id":"20202","class":2,"num":2,"name":"김수아","gender":"여","selected":["세계시민과 지리","세계사","생명과학","일본어","동아시아 역사 기행","기후변화와 지속가능한 세계","세포와 물질대사","일본어 회화"]},{"id":"20203","class":2,"num":3,"name":"김연지","gender":"여","selected":["물리학","화학","생명과학","일본어","물질과 에너지","세포와 물질대사","기하","일본어 회화"]},{"id":"20204","class":2,"num":4,"name":"김유진","gender":"여","selected":["세계시민과 지리","물리학","지구과학","일본어","기후변화와 지속가능한 세계","역학과 에너지","지구시스템과학","일본어 회화"]},{"id":"20205","class":2,"num":5,"name":"김제연","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","경제","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20206","class":2,"num":6,"name":"김채은","gender":"여","selected":["윤리와 사상","화학","생명과학","일본어","윤리문제 탐구","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20207","class":2,"num":7,"name":"박지혜","gender":"여","selected":["윤리와 사상","화학","생명과학","일본어","윤리문제 탐구","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20208","class":2,"num":8,"name":"박진희","gender":"여","selected":["물리학","화학","생명과학","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20209","class":2,"num":9,"name":"송예주","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","동아시아 역사 기행","정치","윤리문제 탐구","일본어 회화"]},{"id":"20210","class":2,"num":10,"name":"안수진","gender":"여","selected":["사회와 문화","화학","생명과학","일본어","정치","기후변화와 지속가능한 세계","세포와 물질대사","일본어 회화"]},{"id":"20211","class":2,"num":11,"name":"지수민","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20212","class":2,"num":12,"name":"고상운","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","정치","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20213","class":2,"num":13,"name":"고현규","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20214","class":2,"num":14,"name":"김선율","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","동아시아 역사 기행","정치","일본어 회화"]},{"id":"20215","class":2,"num":15,"name":"김수성","gender":"남","selected":["물리학","화학","생명과학","일본어","역학과 에너지","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20216","class":2,"num":16,"name":"김승필","gender":"남","selected":["사회와 문화","생명과학","지구과학","일본어","정치","세포와 물질대사","지구시스템과학","일본어 회화"]},{"id":"20217","class":2,"num":17,"name":"김예준","gender":"남","selected":["물리학","화학","생명과학","일본어","역학과 에너지","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20218","class":2,"num":18,"name":"김현우","gender":"남","selected":["사회와 문화","윤리와 사상","지구과학","일본어","경제","윤리문제 탐구","지구시스템과학","일본어 회화"]},{"id":"20219","class":2,"num":19,"name":"박준서","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","일본어","경제","윤리문제 탐구","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20220","class":2,"num":20,"name":"송재민","gender":"남","selected":["물리학","생명과학","지구과학","일본어","물질과 에너지","세포와 물질대사","지구시스템과학","일본어 회화"]},{"id":"20221","class":2,"num":21,"name":"안우빈","gender":"남","selected":["사회와 문화","윤리와 사상","지구과학","일본어","도시의 미래 탐구","경제","윤리문제 탐구","일본어 회화"]},{"id":"20222","class":2,"num":22,"name":"여소망","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","일본어","동아시아 역사 기행","경제","윤리문제 탐구","일본어 회화"]},{"id":"20223","class":2,"num":23,"name":"오상빈","gender":"남","selected":["사회와 문화","윤리와 사상","생명과학","일본어","경제","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20224","class":2,"num":24,"name":"조민석","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","경제","윤리문제 탐구","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20225","class":2,"num":25,"name":"진혁","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","정치","경제","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20301","class":3,"num":1,"name":"강다현","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","중국어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","중국어 회화"]},{"id":"20302","class":3,"num":2,"name":"강예원","gender":"여","selected":["사회와 문화","윤리와 사상","물리학","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20303","class":3,"num":3,"name":"고은별","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","중국어","도시의 미래 탐구","정치","윤리문제 탐구","소프트웨어와 생활"]},{"id":"20304","class":3,"num":4,"name":"김세아","gender":"여","selected":["사회와 문화","생명과학","지구과학","일본어","도시의 미래 탐구","기후변화와 지속가능한 세계","지구시스템과학","일본어 회화"]},{"id":"20305","class":3,"num":5,"name":"백지연","gender":"여","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","동아시아 역사 기행","정치","일본어 회화"]},{"id":"20306","class":3,"num":6,"name":"신희영","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","중국어","도시의 미래 탐구","동아시아 역사 기행","정치","중국어 회화"]},{"id":"20307","class":3,"num":7,"name":"안영채","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","소프트웨어와 생활"]},{"id":"20308","class":3,"num":8,"name":"이현지","gender":"여","selected":["세계시민과 지리","윤리와 사상","생명과학","일본어","정치","기후변화와 지속가능한 세계","세포와 물질대사","일본어 회화"]},{"id":"20309","class":3,"num":9,"name":"강승환","gender":"남","selected":["사회와 문화","생명과학","지구과학","일본어","기후변화와 지속가능한 세계","세포와 물질대사","지구시스템과학","일본어 회화"]},{"id":"20310","class":3,"num":10,"name":"김민우","gender":"남","selected":["세계사","윤리와 사상","지구과학","일본어","정치","경제","물질과 에너지","일본어 회화"]},{"id":"20311","class":3,"num":11,"name":"김민준","gender":"남","selected":["세계시민과 지리","물리학","화학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20312","class":3,"num":12,"name":"김선우","gender":"남","selected":["세계사","사회와 문화","생명과학","일본어","경제","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20313","class":3,"num":13,"name":"박제노","gender":"남","selected":["세계시민과 지리","사회와 문화","생명과학","일본어","도시의 미래 탐구","경제","세포와 물질대사","일본어 회화"]},{"id":"20314","class":3,"num":14,"name":"변규탁","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","데이터 과학","도시의 미래 탐구","경제","윤리문제 탐구","소프트웨어와 생활"]},{"id":"20315","class":3,"num":15,"name":"부호빈","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","동아시아 역사 기행","경제","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20316","class":3,"num":16,"name":"심명보","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20317","class":3,"num":17,"name":"오우준","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20318","class":3,"num":18,"name":"윤혁빈","gender":"남","selected":["세계시민과 지리","세계사","지구과학","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20319","class":3,"num":19,"name":"이성현","gender":"남","selected":["윤리와 사상","화학","생명과학","일본어","윤리문제 탐구","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20320","class":3,"num":20,"name":"이하원","gender":"남","selected":["사회와 문화","윤리와 사상","생명과학","일본어","윤리문제 탐구","기후변화와 지속가능한 세계","세포와 물질대사","일본어 회화"]},{"id":"20321","class":3,"num":21,"name":"조민규","gender":"남","selected":["윤리와 사상","화학","생명과학","데이터 과학","윤리문제 탐구","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20322","class":3,"num":22,"name":"조재범","gender":"남","selected":["세계사","윤리와 사상","지구과학","데이터 과학","동아시아 역사 기행","정치","지구시스템과학","소프트웨어와 생활"]},{"id":"20323","class":3,"num":23,"name":"최지환","gender":"남","selected":["물리학","화학","지구과학","데이터 과학","물질과 에너지","지구시스템과학","기하","소프트웨어와 생활"]},{"id":"20324","class":3,"num":24,"name":"현승우","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","데이터 과학","정치","경제","윤리문제 탐구","소프트웨어와 생활"]},{"id":"20325","class":3,"num":25,"name":"현의협","gender":"남","selected":["화학","생명과학","지구과학","일본어","세포와 물질대사","지구시스템과학","기하","일본어 회화"]},{"id":"20326","class":3,"num":26,"name":"홍김이안","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20401","class":4,"num":1,"name":"고나영","gender":"여","selected":["물리학","화학","지구과학","일본어","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20402","class":4,"num":2,"name":"김가빈","gender":"여","selected":["물리학","화학","생명과학","일본어","물질과 에너지","세포와 물질대사","기하","일본어 회화"]},{"id":"20403","class":4,"num":3,"name":"김사랑","gender":"여","selected":["윤리와 사상","화학","생명과학","데이터 과학","윤리문제 탐구","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20404","class":4,"num":4,"name":"신지수","gender":"여","selected":["윤리와 사상","화학","생명과학","일본어","윤리문제 탐구","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20405","class":4,"num":5,"name":"정민주","gender":"여","selected":["물리학","화학","생명과학","일본어","물질과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20406","class":4,"num":6,"name":"최민지","gender":"여","selected":["사회와 문화","생명과학","지구과학","중국어","기후변화와 지속가능한 세계","세포와 물질대사","지구시스템과학","중국어 회화"]},{"id":"20407","class":4,"num":7,"name":"최지예","gender":"여","selected":["윤리와 사상","화학","생명과학","일본어","윤리문제 탐구","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20408","class":4,"num":8,"name":"한다원","gender":"여","selected":["물리학","생명과학","지구과학","데이터 과학","역학과 에너지","지구시스템과학","기하","소프트웨어와 생활"]},{"id":"20409","class":4,"num":9,"name":"강민기","gender":"남","selected":["물리학","생명과학","지구과학","데이터 과학","역학과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20410","class":4,"num":10,"name":"강민준","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","정치","일본어 회화"]},{"id":"20411","class":4,"num":11,"name":"고상민","gender":"남","selected":["물리학","화학","지구과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20412","class":4,"num":12,"name":"공성준","gender":"남","selected":["물리학","화학","지구과학","일본어","역학과 에너지","물질과 에너지","지구시스템과학","일본어 회화"]},{"id":"20413","class":4,"num":13,"name":"김민준","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","중국어","동아시아 역사 기행","정치","윤리문제 탐구","중국어 회화"]},{"id":"20414","class":4,"num":14,"name":"김성현","gender":"남","selected":["사회와 문화","물리학","지구과학","중국어","역학과 에너지","지구시스템과학","기하","중국어 회화"]},{"id":"20415","class":4,"num":15,"name":"김철희","gender":"남","selected":["물리학","화학","지구과학","데이터 과학","역학과 에너지","지구시스템과학","기하","소프트웨어와 생활"]},{"id":"20416","class":4,"num":16,"name":"김현서","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20417","class":4,"num":17,"name":"박승휘","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","물질과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20418","class":4,"num":18,"name":"박재우","gender":"남","selected":["세계사","윤리와 사상","물리학","일본어","동아시아 역사 기행","경제","기하","일본어 회화"]},{"id":"20419","class":4,"num":19,"name":"엄규빈","gender":"남","selected":["물리학","화학","지구과학","데이터 과학","역학과 에너지","지구시스템과학","기하","소프트웨어와 생활"]},{"id":"20420","class":4,"num":20,"name":"이승리","gender":"남","selected":["물리학","화학","지구과학","데이터 과학","역학과 에너지","지구시스템과학","기하","소프트웨어와 생활"]},{"id":"20421","class":4,"num":21,"name":"이승유","gender":"남","selected":["물리학","화학","인공지능 수학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20422","class":4,"num":22,"name":"이재혁","gender":"남","selected":["물리학","화학","지구과학","일본어","역학과 에너지","물질과 에너지","기하","일본어 회화"]},{"id":"20423","class":4,"num":23,"name":"정지윤","gender":"남","selected":["물리학","지구과학","인공지능 수학","데이터 과학","역학과 에너지","지구시스템과학","기하","소프트웨어와 생활"]},{"id":"20424","class":4,"num":24,"name":"차인성","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20425","class":4,"num":25,"name":"최우영","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20426","class":4,"num":26,"name":"최준영","gender":"남","selected":["물리학","생명과학","지구과학","일본어","역학과 에너지","세포와 물질대사","지구시스템과학","일본어 회화"]},{"id":"20501","class":5,"num":1,"name":"강나언","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","경제","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20502","class":5,"num":2,"name":"김유나","gender":"여","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","정치","윤리문제 탐구","소프트웨어와 생활"]},{"id":"20503","class":5,"num":3,"name":"문원경","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","경제","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20504","class":5,"num":4,"name":"박서희","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","중국어","도시의 미래 탐구","경제","기후변화와 지속가능한 세계","중국어 회화"]},{"id":"20505","class":5,"num":5,"name":"박준솔","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20506","class":5,"num":6,"name":"송민경","gender":"여","selected":["세계시민과 지리","세계사","사회와 문화","데이터 과학","도시의 미래 탐구","정치","경제","소프트웨어와 생활"]},{"id":"20507","class":5,"num":7,"name":"송지우","gender":"여","selected":["세계시민과 지리","윤리와 사상","화학","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20508","class":5,"num":8,"name":"오주현","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","윤리문제 탐구","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20509","class":5,"num":9,"name":"이혜원","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","일본어 회화"]},{"id":"20510","class":5,"num":10,"name":"조예빈","gender":"여","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","동아시아 역사 기행","정치","일본어 회화"]},{"id":"20511","class":5,"num":11,"name":"고준성","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","데이터 과학","도시의 미래 탐구","정치","경제","소프트웨어와 생활"]},{"id":"20512","class":5,"num":12,"name":"김도윤","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20513","class":5,"num":13,"name":"김민찬","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","정치","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20514","class":5,"num":14,"name":"김한성","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20515","class":5,"num":15,"name":"김현범","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","동아시아 역사 기행","정치","일본어 회화"]},{"id":"20516","class":5,"num":16,"name":"김현우","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","정치","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20517","class":5,"num":17,"name":"부민혁","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","정치","경제","일본어 회화"]},{"id":"20518","class":5,"num":18,"name":"송유현","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","경제","일본어 회화"]},{"id":"20519","class":5,"num":19,"name":"신정훈","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","데이터 과학","도시의 미래 탐구","정치","기후변화와 지속가능한 세계","소프트웨어와 생활"]},{"id":"20520","class":5,"num":20,"name":"오명훈","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","정치","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20521","class":5,"num":21,"name":"오준우","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","동아시아 역사 기행","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20522","class":5,"num":22,"name":"이승현","gender":"남","selected":["세계시민과 지리","세계사","사회와 문화","일본어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","일본어 회화"]},{"id":"20523","class":5,"num":23,"name":"장웅","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","중국어","도시의 미래 탐구","경제","윤리문제 탐구","중국어 회화"]},{"id":"20524","class":5,"num":24,"name":"정민재","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","윤리문제 탐구","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20601","class":6,"num":1,"name":"김나연","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","윤리문제 탐구","일본어 회화"]},{"id":"20602","class":6,"num":2,"name":"김서은","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","경제","윤리문제 탐구","일본어 회화"]},{"id":"20603","class":6,"num":3,"name":"김주은","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","일본어 회화"]},{"id":"20604","class":6,"num":4,"name":"나한비","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","중국어","도시의 미래 탐구","정치","윤리문제 탐구","중국어 회화"]},{"id":"20605","class":6,"num":5,"name":"문지영","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","일본어 회화"]},{"id":"20606","class":6,"num":6,"name":"박현아","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","소프트웨어와 생활"]},{"id":"20607","class":6,"num":7,"name":"신지현","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","일본어 회화"]},{"id":"20608","class":6,"num":8,"name":"오예림","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","경제","윤리문제 탐구","일본어 회화"]},{"id":"20609","class":6,"num":9,"name":"이수정","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","윤리문제 탐구","일본어 회화"]},{"id":"20610","class":6,"num":10,"name":"최수아","gender":"여","selected":["사회와 문화","윤리와 사상","물리학","중국어","도시의 미래 탐구","윤리문제 탐구","기후변화와 지속가능한 세계","중국어 회화"]},{"id":"20611","class":6,"num":11,"name":"하지은","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","중국어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","중국어 회화"]},{"id":"20612","class":6,"num":12,"name":"한고은","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20613","class":6,"num":13,"name":"홍지인","gender":"여","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","윤리문제 탐구","일본어 회화"]},{"id":"20614","class":6,"num":14,"name":"강우준","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","윤리문제 탐구","일본어 회화"]},{"id":"20615","class":6,"num":15,"name":"강현규","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","동아시아 역사 기행","경제","윤리문제 탐구","일본어 회화"]},{"id":"20616","class":6,"num":16,"name":"고은준","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","데이터 과학","도시의 미래 탐구","윤리문제 탐구","기후변화와 지속가능한 세계","소프트웨어와 생활"]},{"id":"20617","class":6,"num":17,"name":"김민겸","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","일본어","경제","윤리문제 탐구","기후변화와 지속가능한 세계","일본어 회화"]},{"id":"20618","class":6,"num":18,"name":"김승준","gender":"남","selected":["사회와 문화","윤리와 사상","지구과학","일본어","도시의 미래 탐구","윤리문제 탐구","지구시스템과학","일본어 회화"]},{"id":"20619","class":6,"num":19,"name":"노은찬","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20620","class":6,"num":20,"name":"부영범","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","중국어","정치","경제","윤리문제 탐구","중국어 회화"]},{"id":"20621","class":6,"num":21,"name":"설예훈","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","경제","윤리문제 탐구","일본어 회화"]},{"id":"20622","class":6,"num":22,"name":"이승필","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","일본어","정치","경제","윤리문제 탐구","일본어 회화"]},{"id":"20623","class":6,"num":23,"name":"한인호","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","중국어","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","중국어 회화"]},{"id":"20624","class":6,"num":24,"name":"허민준","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","정치","윤리문제 탐구","일본어 회화"]},{"id":"20625","class":6,"num":25,"name":"홍승현","gender":"남","selected":["세계시민과 지리","사회와 문화","윤리와 사상","일본어","도시의 미래 탐구","경제","윤리문제 탐구","일본어 회화"]},{"id":"20626","class":6,"num":26,"name":"홍지용","gender":"남","selected":["세계사","사회와 문화","윤리와 사상","데이터 과학","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","소프트웨어와 생활"]},{"id":"20701","class":7,"num":1,"name":"고혜주","gender":"여","selected":["윤리와 사상","화학","생명과학","일본어","윤리문제 탐구","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20702","class":7,"num":2,"name":"김나은","gender":"여","selected":["세계시민과 지리","사회와 문화","생명과학","일본어","도시의 미래 탐구","정치","세포와 물질대사","일본어 회화"]},{"id":"20703","class":7,"num":3,"name":"김수민","gender":"여","selected":["사회와 문화","윤리와 사상","생명과학","중국어","도시의 미래 탐구","윤리문제 탐구","세포와 물질대사","중국어 회화"]},{"id":"20704","class":7,"num":4,"name":"김예림","gender":"여","selected":["물리학","화학","생명과학","중국어","물질과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20705","class":7,"num":5,"name":"김정현","gender":"여","selected":["사회와 문화","윤리와 사상","생명과학","중국어","정치","윤리문제 탐구","세포와 물질대사","소프트웨어와 생활"]},{"id":"20706","class":7,"num":6,"name":"김혜민","gender":"여","selected":["사회와 문화","윤리와 사상","생명과학","일본어","도시의 미래 탐구","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20707","class":7,"num":7,"name":"배영란","gender":"여","selected":["물리학","화학","생명과학","데이터 과학","물질과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20708","class":7,"num":8,"name":"안가윤","gender":"여","selected":["세계시민과 지리","사회와 문화","생명과학","일본어","도시의 미래 탐구","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20709","class":7,"num":9,"name":"양서현","gender":"여","selected":["물리학","화학","생명과학","일본어","기후변화와 지속가능한 세계","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20710","class":7,"num":10,"name":"윤민지","gender":"여","selected":["사회와 문화","화학","생명과학","일본어","도시의 미래 탐구","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20711","class":7,"num":11,"name":"이정은","gender":"여","selected":["물리학","화학","생명과학","일본어","윤리문제 탐구","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20712","class":7,"num":12,"name":"임승현","gender":"여","selected":["물리학","화학","생명과학","데이터 과학","물질과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20713","class":7,"num":13,"name":"강성민","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20714","class":7,"num":14,"name":"고호빈","gender":"남","selected":["세계시민과 지리","윤리와 사상","생명과학","일본어","도시의 미래 탐구","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20715","class":7,"num":15,"name":"김단태","gender":"남","selected":["사회와 문화","윤리와 사상","생명과학","일본어","정치","경제","세포와 물질대사","일본어 회화"]},{"id":"20716","class":7,"num":16,"name":"김하엘","gender":"남","selected":["윤리와 사상","화학","생명과학","중국어","윤리문제 탐구","물질과 에너지","세포와 물질대사","중국어 회화"]},{"id":"20717","class":7,"num":17,"name":"박민준","gender":"남","selected":["윤리와 사상","화학","생명과학","일본어","윤리문제 탐구","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20718","class":7,"num":18,"name":"박제운","gender":"남","selected":["사회와 문화","윤리와 사상","생명과학","일본어","도시의 미래 탐구","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20719","class":7,"num":19,"name":"오상운","gender":"남","selected":["세계시민과 지리","사회와 문화","생명과학","일본어","도시의 미래 탐구","경제","세포와 물질대사","일본어 회화"]},{"id":"20720","class":7,"num":20,"name":"이민규","gender":"남","selected":["사회와 문화","윤리와 사상","생명과학","일본어","경제","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20721","class":7,"num":21,"name":"이호준","gender":"남","selected":["사회와 문화","화학","생명과학","일본어","정치","물질과 에너지","세포와 물질대사","일본어 회화"]},{"id":"20722","class":7,"num":22,"name":"조건호","gender":"남","selected":["세계사","사회와 문화","생명과학","일본어","경제","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20723","class":7,"num":23,"name":"한결","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","물질과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20724","class":7,"num":24,"name":"홍요셉","gender":"남","selected":["세계사","윤리와 사상","생명과학","일본어","동아시아 역사 기행","윤리문제 탐구","세포와 물질대사","일본어 회화"]},{"id":"20801","class":8,"num":1,"name":"강지희","gender":"여","selected":["물리학","화학","지구과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20802","class":8,"num":2,"name":"김나린","gender":"여","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20803","class":8,"num":3,"name":"김서륜","gender":"여","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20804","class":8,"num":4,"name":"김승민","gender":"여","selected":["물리학","화학","인공지능 수학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20805","class":8,"num":5,"name":"김희주","gender":"여","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20806","class":8,"num":6,"name":"박유채","gender":"여","selected":["윤리와 사상","물리학","인공지능 수학","데이터 과학","윤리문제 탐구","역학과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20807","class":8,"num":7,"name":"손서아","gender":"여","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20808","class":8,"num":8,"name":"이소예","gender":"여","selected":["물리학","화학","지구과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20809","class":8,"num":9,"name":"이수현","gender":"여","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20810","class":8,"num":10,"name":"이유지","gender":"여","selected":["세계사","사회와 문화","윤리와 사상","데이터 과학","도시의 미래 탐구","동아시아 역사 기행","윤리문제 탐구","소프트웨어와 생활"]},{"id":"20811","class":8,"num":11,"name":"고대완","gender":"남","selected":["물리학","화학","인공지능 수학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20812","class":8,"num":12,"name":"김민준","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20813","class":8,"num":13,"name":"김민후","gender":"남","selected":["물리학","화학","지구과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20814","class":8,"num":14,"name":"김수환","gender":"남","selected":["사회와 문화","물리학","지구과학","데이터 과학","역학과 에너지","지구시스템과학","기하","소프트웨어와 생활"]},{"id":"20815","class":8,"num":15,"name":"김정현","gender":"남","selected":["물리학","화학","인공지능 수학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20816","class":8,"num":16,"name":"김주호","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20817","class":8,"num":17,"name":"박건우","gender":"남","selected":["물리학","생명과학","인공지능 수학","데이터 과학","역학과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20818","class":8,"num":18,"name":"박성현","gender":"남","selected":["물리학","지구과학","인공지능 수학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20819","class":8,"num":19,"name":"신지운","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20820","class":8,"num":20,"name":"양지호","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","기하","소프트웨어와 생활"]},{"id":"20821","class":8,"num":21,"name":"오준혁","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]},{"id":"20822","class":8,"num":22,"name":"이승헌","gender":"남","selected":["물리학","생명과학","지구과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20823","class":8,"num":23,"name":"이해빈","gender":"남","selected":["윤리와 사상","물리학","인공지능 수학","데이터 과학","윤리문제 탐구","역학과 에너지","기하","소프트웨어와 생활"]},{"id":"20824","class":8,"num":24,"name":"최예준","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","물질과 에너지","세포와 물질대사","소프트웨어와 생활"]},{"id":"20825","class":8,"num":25,"name":"허재훈","gender":"남","selected":["물리학","화학","생명과학","데이터 과학","역학과 에너지","세포와 물질대사","기하","소프트웨어와 생활"]}];
+
+const SUBJ_META = {
+  "세계시민과 지리":{sem:"1학기",group:"사회",cat:"택3"},
+  "세계사":{sem:"1학기",group:"사회",cat:"택3"},
+  "사회와 문화":{sem:"1학기",group:"사회",cat:"택3"},
+  "윤리와 사상":{sem:"1학기",group:"사회",cat:"택3"},
+  "물리학":{sem:"1학기",group:"과학",cat:"택3"},
+  "화학":{sem:"1학기",group:"과학",cat:"택3"},
+  "생명과학":{sem:"1학기",group:"과학",cat:"택3"},
+  "지구과학":{sem:"1학기",group:"과학",cat:"택3"},
+  "인공지능 수학":{sem:"1학기",group:"수학",cat:"택1"},
+  "기술가정":{sem:"1학기",group:"기타",cat:"택1"},
+  "데이터 과학":{sem:"1학기",group:"기타",cat:"택1"},
+  "일본어":{sem:"1학기",group:"외국어",cat:"택1"},
+  "중국어":{sem:"1학기",group:"외국어",cat:"택1"},
+  "도시의 미래 탐구":{sem:"2학기",group:"사회",cat:"택3"},
+  "동아시아 역사 기행":{sem:"2학기",group:"사회",cat:"택3"},
+  "정치":{sem:"2학기",group:"사회",cat:"택3"},
+  "경제":{sem:"2학기",group:"사회",cat:"택3"},
+  "윤리문제 탐구":{sem:"2학기",group:"사회",cat:"택3"},
+  "기후변화와 지속가능한 세계":{sem:"2학기",group:"과학",cat:"택3"},
+  "역학과 에너지":{sem:"2학기",group:"과학",cat:"택3"},
+  "물질과 에너지":{sem:"2학기",group:"과학",cat:"택3"},
+  "세포와 물질대사":{sem:"2학기",group:"과학",cat:"택3"},
+  "지구시스템과학":{sem:"2학기",group:"과학",cat:"택3"},
+  "기하":{sem:"2학기",group:"수학",cat:"택3"},
+  "창의 공학 설계":{sem:"2학기",group:"기타",cat:"택1"},
+  "소프트웨어와 생활":{sem:"2학기",group:"기타",cat:"택1"},
+  "일본어 회화":{sem:"2학기",group:"외국어",cat:"택1"},
+  "중국어 회화":{sem:"2학기",group:"외국어",cat:"택1"},
+};
+
+const GROUP_CLR2 = {사회:"#1e8449",과학:"#7d3c98",수학:"#2471a3",기타:"#616a6b",외국어:"#d35400"};
+
+/* 2학년 과목 → 2028 권장 키 매핑 */
+const G2_KEY_MAP = {
+  "세계시민과 지리":"지리","세계사":"역사","사회와 문화":"일반사회","윤리와 사상":"윤리",
+  "물리학":"물리학","화학":"화학","생명과학":"생명과학","지구과학":"지구과학",
+  "인공지능 수학":"대수","기하":"기하",
+  "정치":"일반사회","경제":"일반사회","윤리문제 탐구":"윤리",
+  "도시의 미래 탐구":"지리","동아시아 역사 기행":"역사",
+  "기후변화와 지속가능한 세계":"기타","역학과 에너지":"물리학",
+  "물질과 에너지":"화학","세포와 물질대사":"생명과학","지구시스템과학":"지구과학",
+};
+
+let activeClass = null;
+let activeStudentIdx = null;
+let consultData = {};  // studentId -> {gyeyol, major, sem1, sem2, memo, done}
+let sheetConnected = false;
+
+/* ══ 구글 시트 URL — 배포 후 여기에 붙여넣기 ══
+   Apps Script 배포 → 웹 앱 URL을 아래에 입력하세요 */
+const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxQ1Nj-4Y4SxwYh6sIv5CMZml0E2j42cafzJvw6Gs4H0Piq1FBLeZhl3LU3Luk3spLv/exec';
+/* ════════════════════════════════════════════ */
+
+/* ── localStorage 보조 저장 (오프라인 백업) ── */
+function loadLocalData() {
+  try { return JSON.parse(localStorage.getItem('consult_v6') || '{}'); } catch { return {}; }
+}
+function saveLocalData() {
+  localStorage.setItem('consult_v6', JSON.stringify(consultData));
+}
+
+/* ── 사이트 로드 시 전체 데이터 한꺼번에 불러오기 ── */
+async function loadAllFromSheet() {
+  if(!sheetConnected) return;
+  setSheetStatus('loading', '전체 데이터 불러오는 중...');
+  try {
+    const url = `${SHEET_SCRIPT_URL}?action=getAll`;
+    const res = await fetch(url);
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if(data.error) throw new Error(data.error);
+    let count = 0;
+    (data.records || []).forEach(r => {
+      if(!r.id) return;
+      consultData[r.id] = {
+        gyeyol: r.gyeyol || '',
+        major:  r.major  || '',
+        sem1:   r.sem1   ? r.sem1.split(',').filter(Boolean) : [],
+        sem2:   r.sem2   ? r.sem2.split(',').filter(Boolean) : [],
+        memo:   r.memo   || '',
+        done:   r.done === 'true' || r.done === true,
+      };
+      count++;
+    });
+    saveLocalData();
+    setSheetStatus('ok', `${count}명 데이터 로드 완료`);
+    // 이미 열려있는 반 목록 있으면 갱신
+    if(activeClass) renderStudentList(activeClass);
+  } catch(e) {
+    setSheetStatus('error', e.message);
+  }
+}
+
+/* ── 구글 시트에 저장 (POST) ── */
+async function saveToSheet(id, name) {
+  if(!sheetConnected) return false;
+  const d = consultData[id] || {};
+  // 학번에서 반 추출 (20[반][번호] 형식)
+  const classNum = String(id).length >= 3 ? parseInt(String(id)[2]) : 0;
+  const payload = {
+    action:   'save',
+    id,
+    name:     name || '',
+    classNum,
+    gyeyol:   d.gyeyol || '',
+    major:    d.major  || '',
+    sem1:     (d.sem1  || []).join(','),
+    sem2:     (d.sem2  || []).join(','),
+    memo:     d.memo   || '',
+    done:     d.done ? 'true' : 'false',
+  };
+  try {
+    const res = await fetch(SHEET_SCRIPT_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+    });
+    const result = await res.json();
+    if(result.error) throw new Error(result.error);
+    return true;
+  } catch(e) {
+    showToast('시트 저장 실패: ' + e.message);
+    return false;
+  }
+}
+
+function setSheetStatus(state, msg) {
+  const dot = document.getElementById('sheet-status-dot');
+  const txt = document.getElementById('sheet-status');
+  const bar = document.getElementById('sheet-status-bar');
+  if(!dot || !txt) return;
+  const map = {
+    loading: {dot:'#f39c12', bg:'#fffbf0', color:'#d35400', text: msg || '불러오는 중...'},
+    ok:      {dot:'#27ae60', bg:'#f0fff4', color:'#1e8449', text: msg || '구글 시트 연결됨'},
+    error:   {dot:'#e74c3c', bg:'#fff5f5', color:'#c0392b', text: '오류: ' + (msg||'연결 실패')},
+    off:     {dot:'#ccc',    bg:'#f8f8f8', color:'#888',    text: '로컬 저장 모드'},
+  };
+  const s = map[state] || map.off;
+  dot.style.background = s.dot;
+  txt.textContent = s.text;
+  txt.style.color = s.color;
+  if(bar) bar.style.background = s.bg;
+}
+
+function initConsult() {
+  consultData = loadLocalData();
+  // 반 버튼 생성
+  const grid = document.getElementById('class-btn-grid');
+  const classes = [...new Set(STUDENT_DB.map(s => s.class))].sort();
+  classes.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'class-btn';
+    btn.id = 'class-btn-' + c;
+    btn.innerHTML = `${c}반`;
+    btn.onclick = () => selectClass(c);
+    grid.appendChild(btn);
+  });
+  // URL 설정 여부 확인 후 자동 전체 로드
+  if(SHEET_SCRIPT_URL && SHEET_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbxQ1Nj-4Y4SxwYh6sIv5CMZml0E2j42cafzJvw6Gs4H0Piq1FBLeZhl3LU3Luk3spLv/exec') {
+    sheetConnected = true;
+    loadAllFromSheet(); // 페이지 열리자마자 전체 8반 데이터 로드
+  } else {
+    sheetConnected = false;
+    setSheetStatus('off');
+  }
+}
+
+function selectClass(c) {
+  activeClass = c;
+  activeStudentIdx = null;
+  document.querySelectorAll('.class-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('class-btn-' + c).classList.add('active');
+  document.getElementById('consult-panel').innerHTML = `<div class="consult-empty"><div class="consult-empty-icon">👈</div><div class="consult-empty-text">학생을 선택하면 상담 화면이 표시됩니다</div></div>`;
+  renderStudentList(c);
+}
+
+function renderStudentList(c) {
+  const list = STUDENT_DB.filter(s => s.class === c).sort((a,b) => a.num - b.num);
+  document.getElementById('student-count').textContent = `(${list.length}명)`;
+  let h = '';
+  list.forEach((s, i) => {
+    const saved = consultData[s.id] || {};
+    const isDone = saved.done;
+    const gyeyol = saved.gyeyol || '';
+    const cfg = GYEYOL_CFG[gyeyol] || {main:'#999'};
+    const dbIdx = STUDENT_DB.indexOf(s);
+    h += `<div class="student-item ${isDone ? 'done' : ''}" id="si-${s.id}" onclick="selectStudent(${dbIdx})">
+      <span class="student-num">${s.num}</span>
+      <span class="student-name">${s.name}</span>
+      ${gyeyol ? `<span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:6px;background:${cfg.main};color:white">${gyeyol}</span>` : ''}
+    </div>`;
+  });
+  document.getElementById('student-list').innerHTML = h || '<div style="padding:12px;font-size:12px;color:var(--muted)">학생이 없습니다</div>';
+}
+
+function selectStudent(dbIdx) {
+  activeStudentIdx = dbIdx;
+  const s = STUDENT_DB[dbIdx];
+  document.querySelectorAll('.student-item').forEach(el => el.classList.remove('active'));
+  const el = document.getElementById('si-' + s.id);
+  if(el) el.classList.add('active');
+  renderConsultPanel(s);
+}
+
+function renderConsultPanel(s) {
+  const saved = consultData[s.id] || {};
+  const gyeyol = saved.gyeyol || '';
+  const major = saved.major || '';
+  const memo = saved.memo || '';
+  const sem1Sel = saved.sem1 || [];
+  const sem2Sel = saved.sem2 || [];
+  const cfg = GYEYOL_CFG[gyeyol] || {main:'#1a3a7e',light:'#f0f4ff',icon:'👤'};
+
+  // 2학년 선택과목 파싱
+  const hist1 = s.selected.filter(n => SUBJ_META[n] && SUBJ_META[n].sem === '1학기');
+  const hist2 = s.selected.filter(n => SUBJ_META[n] && SUBJ_META[n].sem === '2학기');
+
+  // 권장과목 찾기
+  let majData = null;
+  if(gyeyol && DATA[gyeyol]) {
+    if(DATA[gyeyol][major]) majData = DATA[gyeyol][major];
+    else {
+      const found = Object.keys(DATA[gyeyol]).find(k => k.includes(major) || major.includes(k));
+      if(found) majData = DATA[gyeyol][found];
+    }
+  }
+
+  let h = `<div class="consult-header">
+    <div>
+      <div class="consult-student-name">${cfg.icon || '👤'} ${s.name} <span style="font-size:15px;font-weight:600;color:var(--muted)">${s.num}번 · ${s.gender}</span></div>
+      <div class="consult-meta">
+        ${gyeyol ? `<span class="consult-badge" style="color:${cfg.main};border-color:${cfg.main}44;background:${cfg.light}">${gyeyol}</span>` : ''}
+        ${major ? `<span class="consult-badge" style="color:#555;border-color:#ddd">${major}</span>` : ''}
+      </div>
+    </div>
+    <button class="save-btn" onclick="saveConsult('${s.id}', '${s.name}')">💾 저장</button>
+  </div>`;
+
+  // ① 진로 입력 폼
+  h += `<div class="consult-section-title">🎯 진로 정보</div>
+  <div class="consult-form-grid">
+    <div>
+      <label class="form-label">계열</label>
+      <select class="form-select" id="inp-gyeyol" onchange="onGyeyolChange('${s.id}')">
+        <option value="">-- 선택 --</option>
+        ${Object.keys(DATA).map(g => `<option value="${g}" ${gyeyol===g?'selected':''}>${g}</option>`).join('')}
+      </select>
+    </div>
+    <div>
+      <label class="form-label">희망학과</label>
+      <input class="form-input" id="inp-major" value="${major}" placeholder="예: 컴퓨터공학과" oninput="onMajorInput('${s.id}')">
+    </div>
+  </div>
+  <div>
+    <label class="form-label">메모</label>
+    <input class="form-input" id="inp-memo" value="${memo}" placeholder="상담 내용 메모" oninput="onMemoInput('${s.id}')">
+  </div>`;
+
+  // ② 2학년 수강이력
+  h += `<div class="consult-section-title">📖 2학년 수강이력</div>
+  <div class="history-grid">
+    <div class="history-sem-card">
+      <div class="history-sem-title">2학년 1학기</div>`;
+  if(hist1.length) {
+    hist1.forEach(n => {
+      const m = SUBJ_META[n];
+      const c = GROUP_CLR2[m?.group] || '#888';
+      h += `<span class="history-tag" style="color:${c};border-color:${c}33;background:${c}10">${n}</span>`;
+    });
+  } else h += `<span style="font-size:12px;color:var(--muted)">기록없음</span>`;
+  h += `</div>
+    <div class="history-sem-card">
+      <div class="history-sem-title">2학년 2학기</div>`;
+  if(hist2.length) {
+    hist2.forEach(n => {
+      const m = SUBJ_META[n];
+      const c = GROUP_CLR2[m?.group] || '#888';
+      h += `<span class="history-tag" style="color:${c};border-color:${c}33;background:${c}10">${n}</span>`;
+    });
+  } else h += `<span style="font-size:12px;color:var(--muted)">기록없음</span>`;
+  h += `</div></div>`;
+
+  // ③ 권장과목 (학과 있을 때만)
+  if(majData) {
+    const keySubjs = Object.entries(majData).filter(([k,u]) => Array.isArray(u) && u.length >= 3)
+      .sort((a,b) => b[1].length - a[1].length).slice(0,5);
+    if(keySubjs.length) {
+      h += `<div class="consult-section-title">⭐ 대학 권장과목 (3개교↑)</div>
+      <div class="key-card" style="background:linear-gradient(135deg,${cfg.light},white);border-color:${cfg.main}33;"><div class="key-tags">`;
+      keySubjs.forEach(([sk,u]) => {
+        const sg = GROUP_CFG[SUBJ_GROUP[sk]||'기타'];
+        h += `<div class="key-tag" style="background:${sg.bg};border-color:${sg.color}44;color:${sg.color}">${sk}<span class="cnt" style="background:${sg.color}">${u.length}개교</span></div>`;
+      });
+      h += `</div></div>`;
+    }
+  }
+
+  // ④ 3학년 선택과목 입력
+  h += `<div class="consult-section-title">✏️ 3학년 선택과목 입력</div>
+  <div class="grade3-input-grid">`;
+
+  const sem1Sections = {
+    "1학기 (택5)": CURRICULUM["3-1 선택 (5과목)"]
+  };
+  const sem2Sections = {
+    "2학기 선택A (택3)": CURRICULUM["3-2 선택 A (3과목)"],
+    "2학기 선택B (택4)": CURRICULUM["3-2 선택 B (4과목)"],
+    "2학기 교양 (택1)": CURRICULUM["3-2 교양 (1과목)"],
+  };
+
+  [["1학기", sem1Sections, sem1Sel], ["2학기", sem2Sections, sem2Sel]].forEach(([semLabel, sections, selArr]) => {
+    h += `<div class="grade3-sem-block">`;
+    Object.entries(sections).forEach(([secLabel, items]) => {
+      h += `<div class="grade3-sem-title">📌 ${secLabel}</div>
+      <div class="grade3-subj-list">`;
+      items.forEach(subj => {
+        const isSelected = selArr.includes(subj.n);
+        // 권장 여부 확인
+        let recCnt = 0;
+        if(majData) {
+          const key2 = SUBJ_KEY_MAP[subj.n];
+          if(key2 && majData[key2] && Array.isArray(majData[key2])) recCnt = majData[key2].length;
+        }
+        const isRec = recCnt >= 3;
+        const GC = {국어:"#e74c3c",영어:"#d35400",수학:"#2471a3",사회:"#1e8449",과학:"#7d3c98",교양:"#616a6b"};
+        const gc = GC[subj.g] || '#888';
+        let cls = 'grade3-subj-item';
+        if(isSelected) cls += ' selected';
+        if(isRec) cls += ' recommended';
+        const semKey = semLabel === '1학기' ? 'sem1' : 'sem2';
+        h += `<div class="${cls}" onclick="toggleGrade3('${s.id}','${semKey}','${subj.n.replace(/'/g,"\\'")}')" id="g3-${s.id}-${subj.n.replace(/[^a-zA-Z0-9가-힣]/g,'_')}">
+          <input type="checkbox" ${isSelected?'checked':''} onclick="event.stopPropagation()">
+          ${isRec ? '<span class="rec-star">⭐</span>' : ''}
+          <span class="grade3-subj-name" style="color:${gc}">${subj.n}</span>
+          ${recCnt > 0 ? `<span class="rec-count-badge">${recCnt}개교</span>` : ''}
+        </div>`;
+      });
+      h += `</div><div style="height:8px"></div>`;
+    });
+    h += `</div>`;
+  });
+
+  h += `</div>`;
+
+  document.getElementById('consult-panel').innerHTML = h;
+}
+
+function onGyeyolChange(id) {
+  const v = document.getElementById('inp-gyeyol').value;
+  if(!consultData[id]) consultData[id] = {};
+  consultData[id].gyeyol = v;
+  // Re-render to update recommendations
+  const dbIdx = STUDENT_DB.findIndex(s => s.id === id);
+  if(dbIdx >= 0) renderConsultPanel(STUDENT_DB[dbIdx]);
+}
+
+function onMajorInput(id) {
+  if(!consultData[id]) consultData[id] = {};
+  consultData[id].major = document.getElementById('inp-major').value;
+}
+
+function onMemoInput(id) {
+  if(!consultData[id]) consultData[id] = {};
+  consultData[id].memo = document.getElementById('inp-memo').value;
+}
+
+function toggleGrade3(id, semKey, subjName) {
+  if(!consultData[id]) consultData[id] = {};
+  if(!consultData[id][semKey]) consultData[id][semKey] = [];
+  const arr = consultData[id][semKey];
+  const idx = arr.indexOf(subjName);
+  if(idx >= 0) arr.splice(idx, 1);
+  else arr.push(subjName);
+  // Update UI
+  const safeId = subjName.replace(/[^a-zA-Z0-9가-힣]/g,'_');
+  const el = document.getElementById(`g3-${id}-${safeId}`);
+  if(el) {
+    el.classList.toggle('selected', arr.includes(subjName));
+    const chk = el.querySelector('input[type=checkbox]');
+    if(chk) chk.checked = arr.includes(subjName);
+  }
+}
+
+async function saveConsult(id, name) {
+  if(!consultData[id]) consultData[id] = {};
+  consultData[id].gyeyol = document.getElementById('inp-gyeyol')?.value || consultData[id].gyeyol || '';
+  consultData[id].major  = document.getElementById('inp-major')?.value  || consultData[id].major  || '';
+  consultData[id].memo   = document.getElementById('inp-memo')?.value   || consultData[id].memo   || '';
+  consultData[id].done   = true;
+  saveLocalData();
+  const btn = document.querySelector('.save-btn');
+  if(btn) { btn.textContent = '⏳ 저장 중...'; btn.disabled = true; }
+  const ok = await saveToSheet(id, name);
+  if(btn) { btn.textContent = '💾 저장'; btn.disabled = false; }
+  const el = document.getElementById('si-' + id);
+  if(el) el.classList.add('done');
+  showToast(ok ? `✅ ${name} — 시트 저장 완료!` : `💾 ${name} — 로컬 저장 (시트 미연결)`);
+}
+
+/* ══════════════════════════════════════════
+   공통 유틸
+══════════════════════════════════════════ */
+function exportStudentList() {
+  // Apps Script의 const flat = [ ... ] 안에 바로 붙여넣을 수 있는 항목만 생성
+  const lines = STUDENT_DB.map(s =>
+    `    {id:'${s.id}', name:'${s.name}', classNum:${s.class}, num:${s.num}},`
+  );
+  const code = lines.join('\n');
+  navigator.clipboard.writeText(code).then(() => {
+    showToast('📋 복사 완료! Apps Script PASTE_HERE 자리에 붙여넣으세요.');
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = code;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('📋 복사 완료! Apps Script PASTE_HERE 자리에 붙여넣으세요.');
+  });
+}
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  initGuide(); initConsult();
+});
+</script>
+</body>
+</html>
